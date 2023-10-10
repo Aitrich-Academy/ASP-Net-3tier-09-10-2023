@@ -1,0 +1,148 @@
+﻿body {
+    background-image: url('../image/register&login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    position: absolute;
+    vertical-align: top;
+}
+
+.rectangle {
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.74);
+    margin-top: 20px;
+    margin-left: 550px;
+    width: 457px;
+    height: 650px;
+    position: relative;
+    border-color: rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.create-an-account {
+    color: #ffffff;
+    text-align: left;
+    margin-left: 80px;
+    font-size: 30px;
+    font-family: Lucida Calligraphy;
+    position: relative;
+    width: 350px;
+}
+
+.login {
+    text-align: left;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 130px;
+    font-family: Lucida Calligraphy;
+    position: relative;
+    width: 215px;
+}
+
+.TextBox {
+    background: rgba(128, 128, 131, 0.80);
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(128, 128, 131, 0.80);
+    border-width: 1px;
+    color: black;
+    margin-left: 45px;
+    width: 376px;
+    height: 41px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+::placeholder {
+    color: black;
+}
+
+.districtlist {
+    color: black;
+    background: rgba(128, 128, 131, 0.80);
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(128, 128, 131, 0.80);
+    border-width: 1px;
+    margin-left: 45px;
+    width: 376px;
+    height: 41px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.RegularExpressionValidator {
+    color: red;
+    font-size: 15px;
+    margin-left: 60px;
+}
+
+.bn54 {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 45px;
+    width: 370px;
+    margin-left: 50px;
+    opacity: 1;
+    border-color: rgba(255, 133, 27, 0.78);
+    background: rgba(255, 133, 27, 0.78);
+    font-family: Lucida Calligraphy;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+    .bn54:hover {
+        animation: bn54rotate 0.7s ease-in-out both;
+        animation-delay: 0.06s;
+    }
+
+@keyframes bn54rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes bn54storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}

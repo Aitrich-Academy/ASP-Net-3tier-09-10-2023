@@ -1,0 +1,125 @@
+﻿body {
+    background: #50ac87;
+    background-image: url('../image/booking.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 256px;
+    height: 102px;
+    position: relative;
+}
+
+.textbox1 {
+    background: rgba(0, 0, 0, 0.74);
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-width: 1px;
+    width: 376px;
+    height: 41px;
+    position: static;
+    margin-top: 80px;
+    margin-left: 132px;
+}
+
+.textbox2 {
+    background: rgba(0, 0, 0, 0.74);
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.22);
+    border-width: 1px;
+    width: 376px;
+    height: 41px;
+    position: static;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    margin-left: 428px;
+}
+
+.details {
+    float: left;
+    background: rgba(0, 0, 0, 0.74);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.22);
+    border-width: 1px;
+    width: 376px;
+    height: 102px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    margin-left: 428px;
+}
+
+.label {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.totalPrice {
+    float: left;
+    background: rgba(0, 0, 0, 0.74);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.22);
+    border-width: 1px;
+    width: 160px;
+    height: 65px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 47px;
+    margin-left: 10px;
+}
+
+.btnCancel {
+    color: red;
+    font-size: 25px;
+    font-family: Verdana;
+    border-color: rgba(255, 255, 255, 0.91);
+    background: rgba(255, 255, 255, 0.91);
+    border-radius: 10px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 560px;
+}
+
+    .btnCancel:hover {
+        color: white;
+        background-color: red;
+        border-color: red;
+    }
+
+.btnConfirm {
+    color: green;
+    font-size: 25px;
+    font-family: Verdana;
+    border-color: rgba(255, 255, 255, 0.91);
+    background: rgba(255, 255, 255, 0.91);
+    border-radius: 10px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+    .btnConfirm:hover {
+        color: white;
+        background-color: green;
+        border-color: green;
+    }
