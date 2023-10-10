@@ -17,8 +17,8 @@
             <div>
                 <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" ForeColor="White" RenderingMode="Table" CssClass="menu">
                     <Items>
-                        <asp:MenuItem Text="HOME" Value="HOME" NavigateUrl="~/MainWebForm.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="ABOUT US" Value="ABOUT US"></asp:MenuItem>
+                        <asp:MenuItem Text="HOME" Value="HOME" NavigateUrl="~/IndianPlatterWebForm.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="ABOUT US" Value="ABOUT US" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="CONTACT US" Value="CONTACT US"></asp:MenuItem>
                     </Items>
                     <StaticMenuItemStyle HorizontalPadding="20px" />
