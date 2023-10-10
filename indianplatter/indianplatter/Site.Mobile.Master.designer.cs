@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace indianplatter {
+namespace IndianPlatter {
     
     
     public partial class Site_Mobile {
