@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +50,24 @@
       <Project>{23a231de-e94d-478d-9c2e-f9c7f7d4c7c6}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BLL.dll" />
+    <Content Include="bin\Debug\BLL.pdb" />
+    <Content Include="bin\Debug\DAL.dll" />
+    <Content Include="bin\Debug\DAL.pdb" />
+    <Content Include="obj\Debug\BLL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\BLL.dll" />
+    <Content Include="obj\Debug\BLL.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\BLL.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\BLL.csproj.CopyComplete" />
+    <None Include="obj\Debug\BLL.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
