@@ -1,0 +1,44 @@
+﻿body {
+    /*background-color:black;*/
+    background-image: url('../image/desktop - 7.jpg');
+}
+
+/*.image{
+    float:right;
+    height:400px;
+    width:450px;
+}*/
+
+
+.logo-1 {
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 395px;
+    height: 123px;
+    margin-bottom: 0px;
+}
+
+.label1 {
+    color: white;
+    width: 742px;
+    height: 179px;
+    font-family: Apple Chancery, cursive;
+    font-size: 22px;
+    text-align: justify;
+    margin-top: 250px;
+    margin-left: 85px;
+}
+
+.read-more {
+    background-color: sandybrown;
+    border-radius: 20px;
+    color: #ffffff;
+    font: 'Inter', sans-serif;
+    position: relative;
+    width: 199px;
+    margin-left: 0px;
+    height: 52px;
+    font-size: 25px;
+    cursor: pointer;
+}
