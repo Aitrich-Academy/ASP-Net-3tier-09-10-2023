@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AboutUs.aspx" />
     <Content Include="AdminWebForm.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
@@ -190,6 +191,7 @@
     <Content Include="Image\Booking.jpg" />
     <Content Include="Image\Category.png" />
     <Content Include="Image\Customers.png" />
+    <Content Include="Image\Desktop - 7.jpg" />
     <Content Include="Image\Favicon.png" />
     <Content Include="Image\Home.png" />
     <Content Include="Image\Logo.png" />
@@ -279,6 +281,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Style\AboutUssheet.css" />
     <Content Include="Style\AdminMaster.css" />
     <Content Include="Style\AdminWebForm.css" />
     <Content Include="Style\Booking.css" />
@@ -296,6 +299,13 @@
     <Content Include="UserMaster.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminMaster.Master.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
