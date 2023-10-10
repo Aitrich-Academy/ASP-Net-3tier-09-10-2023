@@ -186,12 +186,12 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Image\AboutUs.jpg" />
     <Content Include="Image\Admin.png" />
     <Content Include="Image\AdminMaster.jpg" />
     <Content Include="Image\Booking.jpg" />
     <Content Include="Image\Category.png" />
     <Content Include="Image\Customers.png" />
-    <Content Include="Image\Desktop - 7.jpg" />
     <Content Include="Image\Favicon.png" />
     <Content Include="Image\Home.png" />
     <Content Include="Image\Logo.png" />
@@ -281,7 +281,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Style\AboutUssheet.css" />
+    <Content Include="Style\AboutUs.css" />
     <Content Include="Style\AdminMaster.css" />
     <Content Include="Style\AdminWebForm.css" />
     <Content Include="Style\Booking.css" />

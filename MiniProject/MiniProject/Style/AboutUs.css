@@ -1,14 +1,6 @@
 ﻿body {
-    /*background-color:black;*/
-    background-image: url('../image/desktop - 7.jpg');
+    background-image: url('../image/aboutus.jpg');
 }
-
-/*.image{
-    float:right;
-    height:400px;
-    width:450px;
-}*/
-
 
 .logo-1 {
     display: block;
@@ -32,7 +24,7 @@
 
 .read-more {
     background-color: sandybrown;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #ffffff;
     font: 'Inter', sans-serif;
     position: relative;

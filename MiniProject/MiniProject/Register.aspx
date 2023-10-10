@@ -56,7 +56,7 @@
                 <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ControlToValidate="txtConfirmPswd" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                 <%--<asp:CompareValidator ID="confirmPswdValidator" runat="server" ControlToCompare="txtPswd" Text="Passwords do not match" Display="Dynamic" Operator="Equal" CssClass="RegularExpressionValidator" ControlToValidate="txtConfirmPswd"></asp:CompareValidator>--%>
                 <br /><br /><br />
-                <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" CssClass="bn54" />            
+                <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" CssClass="bn54" OnClick="btnSignUp_Click" />            
                 <div class="login" >
                     <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" ForeColor="White" PostBackUrl="~/Login.aspx" >Already have an account?</asp:LinkButton>
                 </div>
