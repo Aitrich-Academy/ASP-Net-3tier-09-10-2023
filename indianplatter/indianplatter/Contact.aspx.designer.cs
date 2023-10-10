@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace indianplatter
+namespace IndianPlatter
 {
 
 
-	public partial class Contact
-	{
-	}
+    public partial class Contact
+    {
+    }
 }

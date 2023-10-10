@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="indianplatter.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="IndianPlatter.Global" Language="C#" %>
