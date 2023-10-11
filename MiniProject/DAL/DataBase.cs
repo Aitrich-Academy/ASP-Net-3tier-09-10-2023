@@ -13,7 +13,7 @@ namespace DAL
     {
         private SqlConnection GetConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=LAPTOP-F0HK91ND;Initial Catalog=Project;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=ASHILYMARIYA;Initial Catalog=Project;Integrated Security=True");
 
             if (con.State == ConnectionState.Open)
             {
