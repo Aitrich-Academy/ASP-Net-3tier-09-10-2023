@@ -11,75 +11,73 @@ namespace DAL
 {
     public class DataBase
     {
-        public SqlCommand cmd;
-        public SqlConnection con;
-
-        public SqlConnection GetConnection()
+        private SqlConnection GetConnection()
         {
             SqlConnection con = new SqlConnection("Data Source=LAPTOP-F0HK91ND;Initial Catalog=Project;Integrated Security=True");
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
+
             con.Open();
             return con;
         }
+
         public DataTable GetDataTable(string query)
         {
             SqlDataAdapter adapter = new SqlDataAdapter(query, GetConnection());
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            return (dt);
+            return dt;
         }
+
         public DataTable GetDataTable(SortedList list, string query)
         {
             SqlCommand cmd = new SqlCommand(query, GetConnection());
             cmd.CommandType = CommandType.StoredProcedure;
 
-            if (!(list.Count == 0))
+            if (list.Count > 0)
             {
-                string[] mKeys = new string[list.Count];
-                list.Keys.CopyTo(mKeys, 0);
-                int i = 0;
-                for (i = 1; i <= list.Count; i++)
+                foreach (DictionaryEntry entry in list)
                 {
-                    cmd.Parameters.Add(new SqlParameter("@" + mKeys[i - 1], list[mKeys[i - 1]]));
+                    cmd.Parameters.Add(new SqlParameter("@" + entry.Key, entry.Value));
                 }
             }
+
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-            return (dt);
+            return dt;
         }
-        public object execscalar(string query)
+
+        public object ExecScalar(string query)
         {
             SqlCommand cmd = new SqlCommand(query, GetConnection());
-            Object s;
-            s = cmd.ExecuteScalar();
-            return s;
+            return cmd.ExecuteScalar();
         }
-        public int execquery(string query)
+
+        public int ExecQuery(string query)
         {
             SqlCommand cmd = new SqlCommand(query, GetConnection());
             return cmd.ExecuteNonQuery();
         }
-        public string executeprocedure(SortedList list, string query)
+
+        public string ExecuteProcedure(SortedList list, string query)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand(query, GetConnection());
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Clear();
-                if (!(list.Count == 0))
+
+                if (list.Count > 0)
                 {
-                    string[] mKeys = new string[list.Count];
-                    list.Keys.CopyTo(mKeys, 0);
-                    int i = 0;
-                    for (i = 1; i <= list.Count; i++)
+                    foreach (DictionaryEntry entry in list)
                     {
-                        cmd.Parameters.Add(new SqlParameter("@" + mKeys[i - 1], list[mKeys[i - 1]]));
+                        cmd.Parameters.Add(new SqlParameter("@" + entry.Key, entry.Value));
                     }
                 }
+
                 return cmd.ExecuteScalar().ToString();
             }
             catch (Exception e)

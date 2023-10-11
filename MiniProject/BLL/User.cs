@@ -23,7 +23,16 @@ namespace BLL
             list.Add("District", property.District);
             list.Add("Pincode", property.Pincode);
             list.Add("PasswordHash", property.Password);
-            return dataBase.executeprocedure(list, "Users_Insert");
+
+            return dataBase.ExecuteProcedure(list, "Users_Insert");
+        }
+
+        public string Login()
+        {
+            list.Add("Email", property.Email);
+            list.Add("PasswordHash", property.Password);
+
+            return dataBase.ExecuteProcedure(list, "Login_User");
         }
     }
 }
