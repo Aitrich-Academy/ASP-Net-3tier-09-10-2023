@@ -12,19 +12,17 @@
     <form id="form1" runat="server">
         <div>
             <asp:Image ID="Logo" runat="server" src="Image/Logo.png" CssClass="logo" />
-            <br />
+            <br /><br />
             <asp:TextBox ID="txtName" runat="server" CssClass="textbox1" ForeColor="White"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtEmail" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPhone" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
-            <asp:TextBox ID="district" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
+            <asp:TextBox ID="txtDistrict" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
-            <asp:TextBox ID="pinCode" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="pswd" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
-            <br />
+            <asp:TextBox ID="txtPinCode" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
+            <br /><br />
             <div class="details">
                 <br />
                 <asp:Label ID="DishName" runat="server" CssClass="label" Text="DishName :"></asp:Label>

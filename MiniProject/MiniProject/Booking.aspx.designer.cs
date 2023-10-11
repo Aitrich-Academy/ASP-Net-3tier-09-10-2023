@@ -60,31 +60,22 @@ namespace MiniProject
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
-        /// district control.
+        /// txtDistrict control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox district;
+        protected global::System.Web.UI.WebControls.TextBox txtDistrict;
 
         /// <summary>
-        /// pinCode control.
+        /// txtPinCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pinCode;
-
-        /// <summary>
-        /// pswd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pswd;
+        protected global::System.Web.UI.WebControls.TextBox txtPinCode;
 
         /// <summary>
         /// DishName control.
