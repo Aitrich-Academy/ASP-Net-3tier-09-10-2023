@@ -166,6 +166,7 @@
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Booking.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="contactus.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -253,6 +254,7 @@
     <Content Include="obj\Debug\MiniProject.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\MiniProject.csproj.CopyComplete" />
     <Content Include="obj\Debug\MiniProject.csproj.CoreCompileInputs.cache" />
+    <Content Include="CategoryManagement.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -285,6 +287,8 @@
     <Content Include="Style\AdminMaster.css" />
     <Content Include="Style\AdminWebForm.css" />
     <Content Include="Style\Booking.css" />
+    <Content Include="Style\categorysheet.css" />
+    <Content Include="Style\contactus.css" />
     <Content Include="Style\Login.css" />
     <Content Include="Style\IndianPlatterMaster.css" />
     <Content Include="Style\OrderManagement.css" />
@@ -342,6 +346,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contactus.aspx.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactus.aspx.designer.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -424,6 +435,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryManagement.aspx.cs">
+      <DependentUpon>CategoryManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryManagement.aspx.designer.cs">
+      <DependentUpon>CategoryManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
