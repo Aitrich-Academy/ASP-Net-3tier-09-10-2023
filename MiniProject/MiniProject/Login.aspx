@@ -24,7 +24,7 @@
                 <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPswd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                 <br /><br /><br />
 
-                <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="bn54" PostBackUrl="~/UserWebForm.aspx" />
+                <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="bn54" OnClick="btnLogin_Click" />
             </div>
         </div>
     </form>
