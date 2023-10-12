@@ -1,0 +1,48 @@
+﻿.label 
+{
+    float: left;
+    width: 880px;
+    color: white;
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Lucida Calligraphy';
+    margin-top: 200px;
+    margin-left: 300px;
+    position: relative;
+}
+
+.buttonMenu {
+    color: black;
+    background: rgba(252, 170, 11, 0.60);
+    border-color: rgba(252, 170, 11, 0.60);
+    border-radius: 10px;
+    font-size: 30px;
+    width: 199px;
+    height: 62px;
+    position: relative;
+    margin-left: 500px;
+    cursor:pointer;
+}
+    .buttonMenu:hover {
+        background-image: linear-gradient( to right, #f5ce62, #e43603, #fa7199, #e85a19 );
+        box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+        border-color: rgba(229, 66, 10, 0.75);
+    }
+
+.buttonOrderNow {
+    color: black;
+    background: rgba(252, 170, 11, 0.60);
+    border-color: rgba(252, 170, 11, 0.60);
+    border-radius: 10px;
+    font-size: 30px;
+    width: 199px;
+    height: 62px;
+    position: relative;
+    margin-left: 5px;
+    cursor: pointer;
+}
+    .buttonOrderNow:hover {
+        background-image: linear-gradient( to right, #f5ce62, #e43603, #fa7199, #e85a19 );
+        box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+        border-color: rgba(229, 66, 10, 0.75);
+    }
