@@ -15,5 +15,15 @@ namespace BLL
         public string District { get; set; }
         public string Pincode { get; set; }
         public string Password { get; set; }
+        public int Category_Id { get; set; }
+        public string Category_Name { get; set;}
+
+        public int Dish_Id { get; set; }
+
+        public string Dish_Name { get; set; }
+
+        public string Image { get; set; }
+         
+        public decimal Price { get; set; }
     }
 }

@@ -447,6 +447,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Picture\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

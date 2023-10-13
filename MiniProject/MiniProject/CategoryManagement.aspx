@@ -13,44 +13,62 @@
     <div class="dishid ">          
         <asp:Label ID="Label5" runat="server" Text="Category Id" Font-Bold="True"  CssClass="text" ></asp:Label>
         <asp:Label ID="Label4" runat="server" Text="Category" CssClass="categry" Font-Bold="True" ></asp:Label>
-
         <br />
-        <asp:TextBox ID="TextBox3" runat="server" CssClass="txtbox2"></asp:TextBox>
+        <asp:TextBox ID="CategoryId" runat="server" CssClass="txtbox2"></asp:TextBox>
          <asp:DropDownList ID="DropDownList1" runat="server" CssClass="textbox1" Height="40px" >
                 <asp:ListItem Value="0">select category</asp:ListItem>
-                <asp:ListItem>veg</asp:ListItem>
-                <asp:ListItem>non-veg</asp:ListItem>
+                <asp:ListItem Value="101">veg</asp:ListItem>
+                <asp:ListItem Value="102">non-veg</asp:ListItem>
+                <asp:ListItem Value="103">Drinks</asp:ListItem>
             </asp:DropDownList>
+        <asp:Button ID="Btncategory" runat="server" Text="Submit" CssClass="btnsbmit" OnClick="Btncategory_Click" />
+        <asp:Label ID="lblmsg" runat="server"></asp:Label>
         <br />
+        <br />
+        <br />
+
+
+        <asp:GridView ID="GridView2" runat="server" DataKeyNames="Category_Id" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Category_Name" HeaderText="Category_Name" />
+                <asp:BoundField DataField="Category_Id" HeaderText="Category_Id" />
+            </Columns>
+        </asp:GridView>
         
         
     <div class="dishlabel">
-        <asp:Label ID="dishlbl" runat="server" Text="Dish Name" Font-Bold="True"  CssClass="text" ></asp:Label>     
+        <asp:Label ID="Label6" runat="server" Text="Category Id" CssClass="text" Font-Bold="True"></asp:Label>
+        <asp:Label ID="dishlbl" runat="server" Text="Dish Name" Font-Bold="True"  CssClass="dishnme" ></asp:Label>     
      <asp:Label ID="Label2" runat="server"  Text="Price" CssClass="pricelbl" Font-Bold="True"></asp:Label>
         <asp:Label ID="Label3" runat="server" Text="Image" CssClass="fileimage" Font-Bold="True" ></asp:Label>
         </div>
-            <asp:TextBox ID="TextBox1" runat="server" CssClass="textbox1"></asp:TextBox>
-            <asp:TextBox ID="TextBox2" runat="server" CssClass="textbox1"></asp:TextBox>
+        <asp:TextBox ID="category" runat="server" CssClass="textbox1"></asp:TextBox>
+            <asp:TextBox ID="Dishname" runat="server" CssClass="textbox1"></asp:TextBox>
+            <asp:TextBox ID="price" runat="server" CssClass="textbox1"></asp:TextBox>
             <asp:FileUpload ID="FileUpload1" runat="server" CssClass="textbox1" Height="40px" />
+        <asp:ImageMap ID="map1" runat="server" Height="51px" Width="64px"></asp:ImageMap>
            
         </div>
-            <asp:Button ID="submitbtn" runat="server" Text="Submit" CssClass="btn" />
-        <asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="clrbtn"/>
+            <asp:Button ID="submitbtn" runat="server" Text="Submit" CssClass="btn" OnClick="submitbtn_Click" />
+        &nbsp;<asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="clrbtn"/>
+
         <br />
         <br />
         <br />
         <br />
+    <asp:HiddenField ID="Hiddenval" runat="server" Value="-1"   />
         <div>
-            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" Height="89px" Width="358px">
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  DataKeyNames="Dish_Id" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" Height="89px" Width="358px">
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
-                    <asp:BoundField HeaderText="Category Id" DataField=" CategoryID" />
-                    <asp:BoundField HeaderText="Dish Id" DataField="  DishID " />
-                    <asp:BoundField HeaderText="Dish Name" DataField="Dish_Name" />
-                    <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                    <asp:BoundField HeaderText="Category Id" DataField="Category_Id" />
+                    <asp:BoundField HeaderText="Dish Id" DataField="Dish_Id" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" />
                     <asp:ImageField HeaderText="Image" DataImageUrlField="Image">
                     </asp:ImageField>
-                    <asp:BoundField HeaderText="Category" DataField="Category_Name" />
+                    <asp:BoundField DataField="Dish_Name" HeaderText="Dish Name" />
+                    <asp:CommandField HeaderText="Edit" ShowEditButton="True" />
+                    <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
