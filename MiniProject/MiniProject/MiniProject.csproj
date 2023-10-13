@@ -198,11 +198,19 @@
     <Content Include="Image\Logo.png" />
     <Content Include="Image\Logout.png" />
     <Content Include="Image\Master.jpg" />
+    <Content Include="Image\MenuItems\ARROW.png" />
+    <Content Include="Image\MenuItems\Brakfast.jpg" />
+    <Content Include="Image\MenuItems\Dinner.jpg" />
+    <Content Include="Image\MenuItems\Drinks.jpeg" />
+    <Content Include="Image\MenuItems\Lunch.jpg" />
+    <Content Include="Image\MenuItems\Starter.jpeg" />
     <Content Include="Image\Order_Details.png" />
     <Content Include="Image\Register&amp;login.jpg" />
     <Content Include="Image\Search.png" />
     <Content Include="IndianPlatterWebForm.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MenuHomePage.aspx" />
+    <Content Include="MenuList.aspx" />
     <Content Include="obj\Debug\MiniProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\MiniProject.dll" />
     <Content Include="obj\Debug\MiniProject.pdb" />
@@ -291,6 +299,7 @@
     <Content Include="Style\contactus.css" />
     <Content Include="Style\Login.css" />
     <Content Include="Style\IndianPlatterMaster.css" />
+    <Content Include="Style\MenuHomePage.css" />
     <Content Include="Style\OrderManagement.css" />
     <Content Include="Style\Register.css" />
     <Content Include="Style\UserMaster.css" />
@@ -384,6 +393,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHomePage.aspx.cs">
+      <DependentUpon>MenuHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuHomePage.aspx.designer.cs">
+      <DependentUpon>MenuHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuList.aspx.cs">
+      <DependentUpon>MenuList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuList.aspx.designer.cs">
+      <DependentUpon>MenuList.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="OrderManagement.aspx.cs">

@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
         <div>
             <asp:Image ID="Logo" runat="server" src="Image/Logo.png" CssClass="logo" />
-            <br /><br />
+            <br />
             <asp:TextBox ID="txtName" runat="server" CssClass="textbox1" ForeColor="White"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtEmail" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
@@ -22,7 +22,7 @@
             <asp:TextBox ID="txtDistrict" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPinCode" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
-            <br /><br />
+            <br />
             <div class="details">
                 <br />
                 <asp:Label ID="DishName" runat="server" CssClass="label" Text="DishName :"></asp:Label>
@@ -39,8 +39,8 @@
                 <asp:Label ID="TotalPrice" runat="server" Text="TotalPrice :" CssClass="label"></asp:Label>
                 <asp:Label ID="txtTotal" runat="server" ></asp:Label>
             </div>
-            <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancel" />
-            <asp:Button ID="btnConfirm" runat="server" Text="CONFIRM" CssClass="btnConfirm" />
+            <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancel" OnClick="btnCancel_Click" />
+            <asp:Button ID="btnConfirm" runat="server" Text="CONFIRM" CssClass="btnConfirm" OnClick="btnConfirm_Click" />
         </div>
     </form>
 </body>
