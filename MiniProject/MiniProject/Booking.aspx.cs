@@ -13,5 +13,16 @@ namespace MiniProject
         {
 
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('Booking Cancelled...👎😒'); window.location.href = 'UserWebForm.aspx'; </script>");
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('Booking successful......👍😎'); window.location.href = 'UserWebForm.aspx'; </script>");
+
+        }
     }
 }

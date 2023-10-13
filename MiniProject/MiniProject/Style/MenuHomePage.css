@@ -1,0 +1,56 @@
+﻿.flex-container {
+    float: left;
+    display: flex;
+    margin-top: 100px;
+    padding: 40px;
+    margin-top: 100px;
+    margin-left: 110px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+    .flex-container > div {
+        background-color: #f3fdff;
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+        height: 280px;
+        font-size: 30px;
+    }
+
+.arrow {
+    width: 37px;
+    height: 37px;
+    margin-left: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.label {
+    color: black;
+    font-family: Lucida Calligraphy;
+}
+
+.starter {
+    width: 200px;
+    height: 220px;
+}
+
+.brakfast {
+    width: 200px;
+    height: 216px;
+}
+
+.lunch {
+    width: 200px;
+    height: 216px;
+}
+
+.dinner {
+    width: 200px;
+    height: 221px;
+}
+
+.drinks {
+    width: 200px;
+    height: 220px;
+}
