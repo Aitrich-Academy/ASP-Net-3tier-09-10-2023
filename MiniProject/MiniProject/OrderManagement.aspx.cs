@@ -13,5 +13,10 @@ namespace MiniProject
         {
 
         }
+
+        protected void btnAcceptOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

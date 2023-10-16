@@ -13,7 +13,7 @@ namespace DAL
     {
         private SqlConnection GetConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=ASHILYMARIYA;Initial Catalog=Project;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-F0HK91ND;Initial Catalog=Project;Integrated Security=True");
 
             if (con.State == ConnectionState.Open)
             {
@@ -32,23 +32,51 @@ namespace DAL
             return dt;
         }
 
-        public DataTable GetDataTable(SortedList list, string query)
+        public DataTable GetDataTable(string query, params SqlParameter[] parameters)
         {
             SqlCommand cmd = new SqlCommand(query, GetConnection());
             cmd.CommandType = CommandType.StoredProcedure;
 
-            if (list.Count > 0)
+            if (parameters != null)
             {
-                foreach (DictionaryEntry entry in list)
-                {
-                    cmd.Parameters.Add(new SqlParameter("@" + entry.Key, entry.Value));
-                }
+                cmd.Parameters.AddRange(parameters);
             }
 
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
+        }
+
+        //public DataTable GetDataTable(SortedList list, string query)
+        //{
+        //    SqlCommand cmd = new SqlCommand(query, GetConnection());
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+        //    if (list.Count > 0)
+        //    {
+        //        foreach (DictionaryEntry entry in list)
+        //        {
+        //            cmd.Parameters.Add(new SqlParameter("@" + entry.Key, entry.Value));
+        //        }
+        //    }
+
+        //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    adapter.Fill(dt);
+        //    return dt;
+        //}
+
+        public SqlDataReader DataReader(string query, params SqlParameter[] parameters)
+        {
+            SqlCommand cmd = new SqlCommand(query, GetConnection());
+            cmd.CommandType = CommandType.StoredProcedure;
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+
+            return cmd.ExecuteReader();
         }
 
         public object ExecScalar(string query)
