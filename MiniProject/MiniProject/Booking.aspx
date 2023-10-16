@@ -17,11 +17,11 @@
             <br />
             <asp:TextBox ID="txtEmail" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtPhone" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
+            <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtDistrict" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtPinCode" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
+            <asp:TextBox ID="txtPincode" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <br />
             <div class="details">
                 <br />

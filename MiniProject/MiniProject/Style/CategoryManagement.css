@@ -5,6 +5,7 @@
     height: 199px;
     position: absolute;
 }
+
 .label {
     color: black;
     font: 50px 'Vesper Libre', sans-serif;
@@ -13,6 +14,7 @@
     height: 79px;
     margin-left: 80px;
 }
+
 .dishid {
     margin-top: 240px;
     margin-left:75px;
@@ -39,16 +41,18 @@
     margin-top: 35px;
     
 }
+
 .dishnme{
     margin-left:130px;
 }
+
 .text {
     font-size: 21px;
 }
+
 .textbox1, .textbox1 * {
     box-sizing: border-box;
 }
-
 .textbox1 {
     background: rgba(0, 0, 0, 0.60);
     border-radius: 10px;
@@ -62,25 +66,29 @@
     font-size:15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
 .pricelbl{
     margin-left:250px;
     font-size:21px;
 }
+
 .fileimage {
     margin-left:180px;
     font-size: 21px;
 }
+
 .image{
     padding:12px;
 }
+
 .categry {
     margin-left:110px;
     font-size: 21px;
 }
+
 .btn, .btn * {
     box-sizing: border-box;
 }
-
 .btn {
     top:25px;
     background: #008000;
@@ -89,10 +97,10 @@
     position: relative;
     margin-left:90px;
 }
+
 .clrbtn, .clrbtn * {
     box-sizing: border-box;
 }
-
 .clrbtn {
     background: #ff0000;
     width: 100px;
@@ -102,6 +110,7 @@
     top: 25px;
     margin-left: 25px;
 }
+
 .btnsbmit {
     margin-left:25px;
     width: 100px;
@@ -109,9 +118,3 @@
     background: #008000;
     font-size:18px;
 }
-
-
-
-
-
-

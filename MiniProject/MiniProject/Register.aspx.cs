@@ -29,7 +29,7 @@ namespace MiniProject
             Hidden.Value = "-1";
             if (result == "Success")
             {
-                Response.Write("<script language='javascript'>if(confirm('Registration is successful......👍😎\\nDo you want to go to the login page?\\nClick OK Button')){ window.location.href = 'Login.aspx'; } else { alert('Cancelled.'); }</script>");
+                Response.Write("<script language='javascript'>if(confirm('Registration is successfully......👍😎\\nDo you want to go to the login page?\\nClick OK Button')){ window.location.href = 'Login.aspx'; } else { alert('Cancelled.'); }</script>");
             }
             else
             {
