@@ -17,8 +17,7 @@
 
 .dishid {
     margin-top: 240px;
-    margin-left:75px;
-  
+    margin-left: 75px;
 }
 
 .txtbox2 {
@@ -39,11 +38,10 @@
 
 .dishlabel {
     margin-top: 35px;
-    
 }
 
-.dishnme{
-    margin-left:130px;
+.dishnme {
+    margin-left: 130px;
 }
 
 .text {
@@ -53,6 +51,7 @@
 .textbox1, .textbox1 * {
     box-sizing: border-box;
 }
+
 .textbox1 {
     background: rgba(0, 0, 0, 0.60);
     border-radius: 10px;
@@ -62,45 +61,47 @@
     width: 217px;
     height: 41px;
     position: relative;
-    color:ghostwhite;
-    font-size:15px;
+    color: ghostwhite;
+    font-size: 15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.pricelbl{
-    margin-left:250px;
-    font-size:21px;
-}
-
-.fileimage {
-    margin-left:180px;
+.pricelbl {
+    margin-left: 250px;
     font-size: 21px;
 }
 
-.image{
-    padding:12px;
+.fileimage {
+    margin-left: 180px;
+    font-size: 21px;
+}
+
+.image {
+    padding: 12px;
 }
 
 .categry {
-    margin-left:110px;
+    margin-left: 110px;
     font-size: 21px;
 }
 
 .btn, .btn * {
     box-sizing: border-box;
 }
+
 .btn {
-    top:25px;
+    top: 25px;
     background: #008000;
     width: 100px;
     height: 36px;
     position: relative;
-    margin-left:90px;
+    margin-left: 90px;
 }
 
 .clrbtn, .clrbtn * {
     box-sizing: border-box;
 }
+
 .clrbtn {
     background: #ff0000;
     width: 100px;
@@ -112,9 +113,13 @@
 }
 
 .btnsbmit {
-    margin-left:25px;
+    margin-left: 25px;
     width: 100px;
     height: 35px;
     background: #008000;
-    font-size:18px;
+    font-size: 18px;
+}
+
+.grid3 {
+    margin-left: 55px;
 }
