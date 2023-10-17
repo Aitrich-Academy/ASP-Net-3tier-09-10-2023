@@ -44,35 +44,40 @@
             <asp:ImageMap ID="map1" runat="server" Height="51px" Width="64px"></asp:ImageMap>
            </div>
             <asp:Button ID="submitbtn" runat="server" Text="Submit" CssClass="btn" OnClick="submitbtn_Click" />
-            &nbsp;
-            <asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="clrbtn"/>
-            <br />
-            <br />
-            <br />
-            <br />
-            <asp:HiddenField ID="Hiddenval" runat="server" Value="-1" />
-            <div>
-                <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  DataKeyNames="Dish_Id" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" Height="89px" Width="358px">
-                        <AlternatingRowStyle BackColor="#DCDCDC" />
-                        <Columns>
-                            <asp:BoundField HeaderText="Category Id" DataField="Category_Id" />
-                            <asp:BoundField HeaderText="Dish Id" DataField="Dish_Id" />
-                            <asp:BoundField DataField="Price" HeaderText="Price" />
-                            <asp:ImageField HeaderText="Image" DataImageUrlField="Image">
-                            </asp:ImageField>
-                            <asp:BoundField DataField="Dish_Name" HeaderText="Dish Name" />
-                            <asp:CommandField HeaderText="Edit" ShowEditButton="True" />
-                            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
-                        </Columns>
-                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                        <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                        <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                        <SortedDescendingHeaderStyle BackColor="#000065" />
-                    </asp:GridView>
-            </div>   
+        &nbsp;<asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="clrbtn"/>
+
+        <br />
+        <br />
+        <br />
+        <br />
+    <asp:HiddenField ID="Hiddenval" runat="server" Value="-1"   />
+        <div>
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  DataKeyNames="Dish_Id" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" Height="89px" Width="358px">
+                <AlternatingRowStyle BackColor="#DCDCDC" />
+                <Columns>
+                    <asp:BoundField HeaderText="Category Id" DataField="Category_Id" />
+                    <asp:BoundField HeaderText="Dish Id" DataField="Dish_Id" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" />
+                    <asp:ImageField HeaderText="Image" DataImageUrlField="Image">
+                    </asp:ImageField>
+                    <asp:BoundField DataField="Dish_Name" HeaderText="Dish Name" />
+                    <asp:CommandField HeaderText="Edit" ShowEditButton="True" />
+                    <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
+                </Columns>
+                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                <SortedDescendingHeaderStyle BackColor="#000065" />
+            </asp:GridView>
+        </div>
+    
+    <asp:Button ID="Button1" runat="server" Text="Button" PostBackUrl="~/WebForm2.aspx" />
+    
+
+   
 </asp:Content>
