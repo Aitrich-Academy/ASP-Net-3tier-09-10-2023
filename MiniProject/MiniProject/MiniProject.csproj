@@ -265,7 +265,6 @@
     <Content Include="obj\Debug\MiniProject.csproj.CopyComplete" />
     <Content Include="obj\Debug\MiniProject.csproj.CoreCompileInputs.cache" />
     <Content Include="CategoryManagement.aspx" />
-    <Content Include="WebForm2.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -468,13 +467,6 @@
     </Compile>
     <Compile Include="CategoryManagement.aspx.designer.cs">
       <DependentUpon>CategoryManagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
