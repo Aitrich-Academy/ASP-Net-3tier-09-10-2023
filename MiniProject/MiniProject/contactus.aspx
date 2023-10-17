@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="contactus.aspx.cs" Inherits="MiniProject.contactus" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ContactUS.aspx.cs" Inherits="MiniProject.contactus" %>
 
 <!DOCTYPE html>
 
