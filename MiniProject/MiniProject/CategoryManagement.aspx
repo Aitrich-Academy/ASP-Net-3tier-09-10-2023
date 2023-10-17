@@ -57,32 +57,34 @@
         <br />
         <br />
     <asp:HiddenField ID="Hiddenval" runat="server" Value="-1"   />
-        <div>
-            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  DataKeyNames="Dish_Id" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" Height="89px" Width="358px">
-                <AlternatingRowStyle BackColor="#DCDCDC" />
+        <div class="grid3">
+            <br />
+            <br />
+            <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" Height="215px" Width="772px">
                 <Columns>
-                    <asp:BoundField HeaderText="Category Id" DataField="Category_Id" />
-                    <asp:BoundField HeaderText="Dish Id" DataField="Dish_Id" />
-                    <asp:BoundField DataField="Price" HeaderText="Price" />
-                    <asp:ImageField HeaderText="Image" DataImageUrlField="Image">
+                    <asp:BoundField DataField="Category_Id" HeaderText="Category_Id" />
+<%--                    <asp:BoundField DataField="Category_Name" HeaderText="Category_Name" />--%>
+<%--                    <asp:BoundField DataField="Dish_Id " HeaderText="Dish_id" />--%>
+                    <asp:BoundField DataField="Dish_Name" HeaderText="Dish_Name" />
+                    <asp:ImageField DataImageUrlField="Image" HeaderText="image">
+                        <ControlStyle Height="60px" Width="60px" />
                     </asp:ImageField>
-                    <asp:BoundField DataField="Dish_Name" HeaderText="Dish Name" />
-                    <asp:CommandField HeaderText="Edit" ShowEditButton="True" />
-                    <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" />
+                    <asp:TemplateField HeaderText="EDIT">
+                        <ItemTemplate>
+                            <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" Height="45px" ImageUrl="~/Image/edit.png" OnClick="ImageButton1_Click" Width="42px" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="DELETE">
+                        <ItemTemplate>
+                            <asp:ImageButton ID="ImageButton2" runat="server" Height="45px" ImageUrl="~/Image/Delete.png" Width="51px" OnClick="ImageButton2_Click" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
-                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
         </div>
     
-    
+    <asp:Button ID="Button1" runat="server" Text="Button" PostBackUrl="~/WebForm2.aspx" />
     
 
    

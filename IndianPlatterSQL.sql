@@ -145,14 +145,13 @@ end
 
 ------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------Category Table------------------------------------------------
-Create TABLE Categorys (
+CREATE TABLE Categorys (
     CategoryID INT PRIMARY KEY,
     Category_Name VARCHAR(50) NOT NULL,
 	Status varchar(100),
 );
-insert into Categorys values(103,'veg','A')
-select *from Categorys
 
+----------------------------------------------------------------------------------------------
 CREATE PROCEDURE Category_Select
 as
 begin
@@ -197,7 +196,7 @@ GO
 	Status varchar(100),
 	foreign key(Category_id) references Categorys(CategoryID)
 );
-select *from Dishes
+select * from Dishes
 -------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------DISH INSERT-----------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
@@ -226,24 +225,23 @@ BEGIN TRANSACTION
 	select @result		
 	COMMIT TRANSACTION
 END
-exec Dish_Insert 'hjhjhj',123,'not null',101
 -------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------DISH UPDATE-----------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE Dish_Update  
-(  @Dish_Id as int,
-  @Dishe_Name AS VARCHAR(500)
-,@Price AS INT,
+(
+@Dish_Id as int,
+@Dishe_Name AS VARCHAR(500),
+@Price AS INT,
 @Image AS  VARCHAR(500),
 @Category_Id AS INT
- 
 )  
-as  
-begin  
+AS  
+BEGIN 
 	 BEGIN TRANSACTION  
-	 declare @result as varchar(50)  
-	 begin  
-		 Update Dishes set Dishe_Name=@Dishe_Name, Price=@Price,Image=@Image ,Category_id=@Category_Id where  DishID=@Dish_Id 
+	 DECLARE @result AS varchar(50)  
+	 BEGIN  
+		 UPDATE Dishes SET Dishe_Name=@Dishe_Name, Price=@Price,Image=@Image,Category_id=@Category_Id  where  DishID=@Dish_Id 
 		 if(@@error > 0)  
 			 begin  
 			   set @result = 'Error'  
@@ -257,21 +255,23 @@ begin
 	 COMMIT TRANSACTION  
 	 select @result  
 end  
+Go
+
 ---------------------------------------------------------------------------------------------------------
 ----------------------------------------------DISH DELETE-------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE Dish_Delete 
 (  
-@DishID as int  
+@DishID AS INT  
 )  
-as  
-begin  
+AS 
+BEGIN 
 	 BEGIN TRANSACTION  
-	 declare @result as varchar(50)  
-	 update Dishes set Status = 'D' where DishID = @DishID  
+	 DECLARE @result AS varchar(50)  
+	 UPDATE Dishes SET  Status = 'D' where DishID = @DishID  
 	 if (@@error>0)  
-		  begin  
-			   set @result = 'Error'  
+		  BEGIN  
+			   SET @result = 'Error'  
 			   ROLLBACK TRANSACTION  
 		  end  
 	 else  
@@ -287,22 +287,18 @@ end
 CREATE PROCEDURE Dish_Select
 as
 begin
-select *from Dishes
+select *from Dishes Where Status='A'
 end
-
-CREATE PROCEDURE GetCategoriesAndDishes
+-----------------------------------------------------------------------------------------------------------
+---------------------------EDIT DISH----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE Edit_Dish
+(@Dish_Id AS INT
+)
 AS
 BEGIN
-    SELECT
-        c.Category_Name AS CategoryName,
-        d.DishID,
-        d.Dishe_Name AS DishName,
-        d.Price,
-        d.Image
-    FROM Categorys c
-    LEFT JOIN Dishes d ON c.CategoryID = d.Category_id
-END
-
+	SELECT * FROM Dishes WHERE DishId=@Dish_Id AND Status='A'
+	END
 -------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------Order Table---------------------------------------------------
@@ -319,4 +315,3 @@ CREATE TABLE Orders (
 	foreign key(Dishe_id) references Dishes(DishID)
 );
 
-select *from Orders
