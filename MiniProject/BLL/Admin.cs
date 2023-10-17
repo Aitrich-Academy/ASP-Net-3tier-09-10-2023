@@ -23,7 +23,6 @@ namespace BLL
 
             return dataBase.ExecuteProcedure(lists, "Category_Insert");
         }
-
         public string Dish_Insert()
         {
             lists.Clear();
@@ -36,71 +35,40 @@ namespace BLL
 
         }
 
-        public string Dish_Update()
-        {
-            lists.Clear();
-            lists.Add("Dish_Id", property.Dish_Id);
-            lists.Add("Dishe_Name", property.Dish_Name);
-            lists.Add("Price", property.Price);
-            lists.Add("Image", property.Image);
-            lists.Add("Category_Id", property.Category_Id);
+        //public string Dish_Update()
+        //{
+        //    S1.Clear();
+        //    S1.Add("Dish_Id", property.Dish_Id);
+        //    S1.Add("Dishe_Name", property.Dish_Name);
+        //    S1.Add("Price", property.Price);
+        //    S1.Add("IMAGE", property.Image);
+        //    S1.Add("Category_Id", property.Category_Id);
+        //    return dataBase.ExecuteProcedure(S1, "Dish_Update ");
+        //}
 
-            return dataBase.ExecuteProcedure(lists, "Dish_Update");
-        }
-
-        public string Dish_Delete()
-        {
-            lists.Clear();
-            lists.Add("DishID", property.Dish_Id);
-
-            return dataBase.ExecuteProcedure(lists, "Dish_Delete");
-        }
-
-        public void EditDishes()
-        {
-            lists.Clear();
-            lists.Add("Dish_Id", property.Dish_Id);
-            DataTable dt = new DataTable();
-            dt = dataBase.GetDataTable(lists, "Edit_Dish");
-            if (dt.Rows.Count > 0)
-            {
-                property.Category_Id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
-                //property.Dish_Id = Convert.ToInt32(dt.Rows[0].ItemArray[1]);
-                property.Dish_Name = dt.Rows[0].ItemArray[1].ToString();
-                decimal price;
-                if (decimal.TryParse(dt.Rows[0].ItemArray[2].ToString(), out price))
-                {
-                    property.Price = price;
-                }
-                else
-                {
-                    // Handle the case where the conversion fails, e.g., set a default value or display an error message.
-                }
-
-                property.Image = dt.Rows[0].ItemArray[3].ToString(); 
-
-            }
-
-
-
-        }
+        //public string Dish_Delete()
+        //{
+        //    S1.Clear();
+        //    S1.Add("DishID", property.Dish_Id);
+        //    return dataBase.ExecuteProcedure(S1, "Dish_Delete");
+        //}
         public List<Property> SelectAllDishes()
         {
             DataTable dt = new DataTable();
-            dt = dataBase.GetDataTable("Dish_Select");
+            dt = dataBase.GetDataTable("GetCategoriesAndDishes");
             List<Property> list = new List<Property>();
             foreach (DataRow dr in dt.Rows)
             {
                 list.Add(new Property
                 {
 
-                    //Category_Name = dr["Category_Name"].ToString(),
+                    //Category_Name = dr[" Category_Name"].ToString(),
                     Dish_Id = Convert.ToInt32(dr["DishID"]),
                     Dish_Name = dr["Dishe_Name"].ToString(),
                     Price = Convert.ToDecimal(dr["Price"]),
                     Image = dr["Image"].ToString(),
                     Category_Id = Convert.ToInt32(dr["Category_id"])
-                    
+
 
                 });
             }

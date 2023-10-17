@@ -34,7 +34,7 @@
                 <br />
                 <div class="style2">
                     <asp:Image ID="Category" runat="server" CssClass="icon" src="Image/Category.png" />
-                    <asp:Button ID="btnCategory" runat="server" CssClass="button" Text="Category" PostBackUrl="~/CategoryManagement.aspx" />
+                    <asp:Button ID="btnCategory" runat="server" CssClass="button" Text="Category" />
                 </div>
                 <br />
                 <div class="style2">

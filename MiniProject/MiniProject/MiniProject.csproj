@@ -193,8 +193,6 @@
     <Content Include="Image\Booking.jpg" />
     <Content Include="Image\Category.png" />
     <Content Include="Image\Customers.png" />
-    <Content Include="Image\Delete.png" />
-    <Content Include="Image\edit.png" />
     <Content Include="Image\Favicon.png" />
     <Content Include="Image\Home.png" />
     <Content Include="Image\Logo.png" />
