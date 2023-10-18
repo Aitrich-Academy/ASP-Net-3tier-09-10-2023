@@ -21,6 +21,10 @@ namespace MiniProject
 
         private void SetUserDetails()
         {
+            if (Session["UserID"] != null)
+            {
+                Hidden.Value = Session["UserID"].ToString();
+            }
             txtName.Text = Session["Name"].ToString();
             txtEmail.Text = Session["Email"].ToString();
             txtPhoneNumber.Text = Session["PhoneNumber"].ToString();
@@ -29,22 +33,21 @@ namespace MiniProject
         }
         public void DishesBooking()
         {
-            int userID = Convert.ToInt32(Session["UserID"]);
-            string name = txtName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string phoneNumber = txtPhoneNumber.Text.Trim();
-            string district = txtDistrict.Text.Trim();
-            string pincode = txtPincode.Text.Trim();
-
-            string result = user.Booking(userID, name, email, phoneNumber, district, pincode);
+            user.property.Id = Convert.ToInt32(Session["UserID"]);
+            user.property.Name = txtName.Text.ToString();
+            user.property.Email = txtEmail.Text.ToString();
+            user.property.PhoneNumber = txtPhoneNumber.Text.ToString();
+            user.property.District = txtDistrict.Text.ToString();
+            user.property.Pincode = txtPincode.Text.ToString();
+            string result = user.Booking();
             if (result == "Success")
             {
-                Session["UserID"] = userID;
-                Session["Name"] = name;
-                Session["Email"] = email;
-                Session["PhoneNumber"] = phoneNumber;
-                Session["District"] = district;
-                Session["Pincode"] = pincode;
+                Session["Name"] = user.property.Name;
+                Session["Email"] = user.property.Email;
+                Session["PhoneNumber"] = user.property.PhoneNumber;
+                Session["District"] = user.property.District;
+                Session["Pincode"] = user.property.Pincode;
+
                 Response.Write("<script>alert('Booking successfully......👍😎'); window.location.href = 'UserWebForm.aspx'; </script>");
             }
             else

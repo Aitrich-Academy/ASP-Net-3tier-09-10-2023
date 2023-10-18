@@ -43,15 +43,15 @@ namespace BLL
             return dataBase.GetDataTable("User_Select", new SqlParameter("@Email", email), new SqlParameter("@PasswordHash", passwordHash));
         }
 
-        public string Booking(int userID, string name, string email, string phoneNumber, string district, string pincode)
+        public string Booking()
         {
             list.Clear();
-            list.Add("UserID", userID);
-            list.Add("Name", name);
-            list.Add("Email", email);
-            list.Add("PhoneNumber", phoneNumber);
-            list.Add("District", district);
-            list.Add("Pincode", pincode);
+            list.Add("UserID", property.Id);
+            list.Add("Name", property.Name);
+            list.Add("Email", property.Email);
+            list.Add("PhoneNumber", property.PhoneNumber);
+            list.Add("District", property.District);
+            list.Add("Pincode", property.Pincode);
 
             return dataBase.ExecuteProcedure(list, "Users_Update");
         }

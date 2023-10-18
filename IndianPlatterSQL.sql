@@ -16,7 +16,6 @@ CREATE TABLE Users (
 );
 select *from Users
 
-
 ----------------------------------------------------------------
 ----------------------------------------------------Users_Insert
 CREATE PROCEDURE Users_Insert
@@ -48,7 +47,6 @@ begin
 	select @result
 end
 GO
-
 
 ----------------------------------------------------------------
 ----------------------------------------------------Users_Update
@@ -87,7 +85,7 @@ GO
 ----------------------------------------------------Users_Delete
 CREATE PROCEDURE Users_Delete 
 (  
-@UserID as int  
+	@UserID as int  
 )  
 as  
 begin  
@@ -134,11 +132,16 @@ GO
 
 ----------------------------------------------------------------
 -----------------------------------------------------User_Select
-CREATE PROCEDURE User_Select
+Create PROCEDURE User_Select
+(
+    @Email as VARCHAR(500),
+    @PasswordHash as VARCHAR(25) 
+)
 as
 begin
-select *from Users
+	SELECT UserID, Name, Email, PhoneNumber, District, Pincode FROM Users WHERE Email = @Email AND PasswordHash = @PasswordHash
 end
+GO
 
 
 
@@ -151,15 +154,17 @@ CREATE TABLE Categorys (
 	Status varchar(100),
 );
 
-----------------------------------------------------------------------------------------------
+-------------------------------------------------------
+----------------------------------------Category_Select
 CREATE PROCEDURE Category_Select
 as
 begin
-select *from Categorys
+	select *from Categorys
 end
-----------------------------------------------------------------------------------------------------------
-----------------------------------------Category Table Insert---------------------------------------------
------------------------------------------------------------------------------------------------------------
+GO
+
+-------------------------------------------------------
+----------------------------------------Category_Insert
 CREATE PROCEDURE Category_Insert
 (
    @Category_Id AS INT,
@@ -185,26 +190,32 @@ begin
 	select @result
 end
 GO
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------Dishes Table--------------------------------------------------
- CREATE TABLE Dishes (
+CREATE TABLE Dishes (
     DishID INT IDENTITY(1,1) PRIMARY KEY,
     Dishe_Name VARCHAR(500) NOT NULL,
-	Price int NOT NULL,
+	Price DECIMAL NOT NULL,
     Image VARCHAR(500) NOT NULL,
     Category_id int,
 	Status varchar(100),
 	foreign key(Category_id) references Categorys(CategoryID)
 );
 select * from Dishes
--------------------------------------------------------------------------------------------------------------------
----------------------------------------------DISH INSERT-----------------------------------------------------------
------------------------------------------------------------------------------------------------------------
+
+insert into Dishes values ('Sample Dish', 100 , 'sample_image_url' ,101, '')
+--------------------------------------------------------
+---------------------------------------------Dish_Insert
 CREATE PROCEDURE Dish_Insert
-(@Dishe_Name AS VARCHAR(500),
-@Price AS INT,
-@Image AS VARCHAR(500) ,
-@Category_Id AS INT
+(
+	@Dishe_Name AS VARCHAR(500),
+	@Price AS INT,
+	@Image AS VARCHAR(500) ,
+	@Category_Id AS INT
 )
 AS
 BEGIN
@@ -225,16 +236,17 @@ BEGIN TRANSACTION
 	select @result		
 	COMMIT TRANSACTION
 END
--------------------------------------------------------------------------------------------------------------------
----------------------------------------------DISH UPDATE-----------------------------------------------------------
------------------------------------------------------------------------------------------------------------
+GO
+
+--------------------------------------------------------
+---------------------------------------------Dish_Update
 CREATE PROCEDURE Dish_Update  
 (
-@Dish_Id as int,
-@Dishe_Name AS VARCHAR(500),
-@Price AS INT,
-@Image AS  VARCHAR(500),
-@Category_Id AS INT
+	@Dish_Id as int,
+	@Dishe_Name AS VARCHAR(500),
+	@Price AS INT,
+	@Image AS  VARCHAR(500),
+	@Category_Id AS INT
 )  
 AS  
 BEGIN 
@@ -255,14 +267,13 @@ BEGIN
 	 COMMIT TRANSACTION  
 	 select @result  
 end  
-Go
+GO
 
----------------------------------------------------------------------------------------------------------
-----------------------------------------------DISH DELETE-------------------------------------------------
----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------
+----------------------------------------------Dish_Delete
 CREATE PROCEDURE Dish_Delete 
 (  
-@DishID AS INT  
+   @DishID AS INT  
 )  
 AS 
 BEGIN 
@@ -281,37 +292,120 @@ BEGIN
 	 COMMIT TRANSACTION  
 	 select @result
 end
-------------------------------------------------------------------------------------------------------
------------------------------------------Dish_Select--------------------------------------------------
--------------------------------------------------------------------------------------------------------
+GO
+
+----------------------------------------------------
+-----------------------------------------Dish_Select
 CREATE PROCEDURE Dish_Select
 as
 begin
-select *from Dishes Where Status='A'
+  select *from Dishes Where Status='A'
 end
------------------------------------------------------------------------------------------------------------
----------------------------EDIT DISH----------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------
+GO
+
+----------------------------------------------------
+-------------------------------------------Edit_Dish
 CREATE PROCEDURE Edit_Dish
-(@Dish_Id AS INT
+(
+	@Dish_Id AS INT
 )
 AS
 BEGIN
 	SELECT * FROM Dishes WHERE DishId=@Dish_Id AND Status='A'
-	END
--------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------Order Table---------------------------------------------------
+END
+GO
+
+----------------------------------------------------Orders Table---------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
+    OrderID INT IDENTITY(100,1) PRIMARY KEY,
 	User__id INT,
-	Dishe_id INT,
-    Dishe_Name VARCHAR(50) NOT NULL,
-	Price INT NOT NULL,
+	Dish_id INT,
+    Dish_Name VARCHAR(50) NOT NULL,
+	Price DECIMAL NOT NULL,
+	Quantity INT NOT NULL,
 	Total_Price INT NOT NULL,
 	Image VARCHAR(500) NOT NULL,
 	Status varchar(100),
 	foreign key(User__id) references Users(UserID),
-	foreign key(Dishe_id) references Dishes(DishID)
+	foreign key(Dish_id) references Dishes(DishID)
 );
+select *from Orders
 
+---------------------------------------------------------
+-----------------------------------------Order_Management
+CREATE PROCEDURE Order_Management
+(
+    @UserID INT,
+    @Name VARCHAR(100),
+    @Email VARCHAR(500),
+    @PhoneNumber BIGINT,
+    @District VARCHAR(100),
+    @Pincode BIGINT,
+    @Dish_Name VARCHAR(50),
+    @Price INT,
+    @Quantity INT,
+    @TotalPrice INT,
+    @Image VARCHAR(500)
+)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+    DECLARE @result AS VARCHAR(50);
+
+    UPDATE Users 
+    SET Name = @Name, 
+        Email = @Email, 
+        PhoneNumber = @PhoneNumber, 
+        District = @District, 
+        Pincode = @Pincode 
+    WHERE UserID = @UserID;
+
+    IF @@ERROR <> 0  
+    BEGIN  
+        SET @result = 'Error';  
+        ROLLBACK TRANSACTION;  
+    END  
+    ELSE  
+    BEGIN  
+        INSERT INTO Orders (User__id, Dish_id, Dish_Name, Price, Quantity, Total_Price, Image, Status) 
+        VALUES (@UserID, (SELECT DishID FROM Dishes WHERE Dishe_Name = @Dish_Name), @Dish_Name, @Price, @Quantity, @TotalPrice, @Image, 'A');
+
+        IF @@ERROR <> 0  
+        BEGIN  
+            SET @result = 'Error';  
+            ROLLBACK TRANSACTION;  
+        END  
+        ELSE  
+        BEGIN  
+            SET @result = 'Success';  
+            COMMIT TRANSACTION;  
+        END
+    END
+
+    SELECT @result;
+END
+GO
+
+EXEC Order_Management 1, 'Devika Sunilkumar', 'devika2002@gmail.com', 9846707273, 'Thrissur', 680012, 'Sample Dish',10, 2, 20, 'sample_image_url'
+
+CREATE PROCEDURE GetOrderDetails
+AS
+BEGIN
+    SELECT 
+        O.OrderID,
+        U.Name AS User_Name,
+		U.Email,
+		U.PhoneNumber,
+		U.District,
+		U.Pincode,
+        D.Dishe_Name AS DishName,
+        D.Price,
+        O.Quantity,
+        O.Total_Price,
+	    D.Image
+    FROM Orders O
+    INNER JOIN Users U ON O.User__id = U.UserID
+    INNER JOIN Dishes D ON O.Dish_id = D.DishID;
+END
+GO
