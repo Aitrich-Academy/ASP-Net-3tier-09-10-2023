@@ -41,6 +41,7 @@
             </div>
             <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancel" OnClick="btnCancel_Click" />
             <asp:Button ID="btnConfirm" runat="server" Text="CONFIRM" CssClass="btnConfirm" OnClick="btnConfirm_Click" />
+            <asp:HiddenField ID="Hidden" runat="server"/>
         </div>
     </form>
 </body>

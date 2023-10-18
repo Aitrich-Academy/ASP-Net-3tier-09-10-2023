@@ -196,7 +196,7 @@
     <Content Include="Image\Delete.png" />
     <Content Include="Image\Edit.png" />
     <Content Include="Image\Favicon.png" />
-    <Content Include="Image\Home.png" />
+    <Content Include="Image\AdminHome.png" />
     <Content Include="Image\Logo.png" />
     <Content Include="Image\Logout.png" />
     <Content Include="Image\Master.jpg" />
@@ -209,6 +209,7 @@
     <Content Include="Image\Order_Details.png" />
     <Content Include="Image\Register&amp;login.jpg" />
     <Content Include="Image\Search.png" />
+    <Content Include="Image\UserHome.png" />
     <Content Include="IndianPlatterWebForm.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MenuHomePage.aspx" />
