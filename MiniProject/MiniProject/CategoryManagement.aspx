@@ -37,7 +37,13 @@
                     <asp:Label ID="Label2" runat="server"  Text="Price" CssClass="pricelbl" Font-Bold="True"></asp:Label>
                     <asp:Label ID="Label3" runat="server" Text="Image" CssClass="fileimage" Font-Bold="True" ></asp:Label>
                 </div>
-                <asp:TextBox ID="category" runat="server" CssClass="textbox1"></asp:TextBox>
+                <%--<asp:TextBox ID="category" runat="server" CssClass="textbox1"></asp:TextBox>--%>
+        <asp:DropDownList ID="categorydropdown" runat="server" CssClass="textbox1">
+            <asp:ListItem Value="0">------select category Id-----</asp:ListItem>
+                    <asp:ListItem Value="101">veg</asp:ListItem>
+                    <asp:ListItem Value="102">non-veg</asp:ListItem>
+                    <asp:ListItem Value="103">Drinks</asp:ListItem>
+        </asp:DropDownList>
                     <asp:TextBox ID="Dishname" runat="server" CssClass="textbox1"></asp:TextBox>
                     <asp:TextBox ID="price" runat="server" CssClass="textbox1"></asp:TextBox>
                     <asp:FileUpload ID="FileUpload1" runat="server" CssClass="textbox1" Height="40px" />
@@ -47,19 +53,24 @@
             <asp:Button ID="submitbtn" runat="server" Text="Submit" CssClass="btn" OnClick="submitbtn_Click" />
             &nbsp;
             <asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="clrbtn"/>
+    <asp:Label ID="Lblmessage" runat="server"  CssClass="Lblmessage"></asp:Label>
              <br /><br /><br /><br />
             <asp:HiddenField ID="Hiddenval" runat="server" Value="-1"   />
             <div class="grid3">
                 <br />
                 <br />
-                <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" Height="215px" Width="772px">
+                <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" Height="215px" Width="772px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="Category_Id" HeaderText="Category_Id" />
                         <asp:BoundField DataField="Dish_Name" HeaderText="Dish_Name" />
                         <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
-                            <ControlStyle Height="60px" Width="60px" />
+                            <ControlStyle Height="100px" Width="100px" />
                         </asp:ImageField>
-                        <asp:BoundField DataField="Price" HeaderText="Price" />
+                        <asp:BoundField DataField="Price" HeaderText="Price" >
+                        <ControlStyle Font-Names="Footlight MT Light" />
+                        <HeaderStyle Font-Bold="True" />
+                        </asp:BoundField>
                         <asp:TemplateField HeaderText="EDIT">
                             <ItemTemplate>
                                 <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" Height="45px" ImageUrl="~/Image/Edit.png" OnClick="ImageButton1_Click" Width="42px" />
@@ -71,6 +82,16 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
             </div>
 </asp:Content>

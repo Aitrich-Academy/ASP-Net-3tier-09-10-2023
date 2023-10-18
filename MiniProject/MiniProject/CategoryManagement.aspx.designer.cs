@@ -123,13 +123,13 @@ namespace MiniProject
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// category control.
+        /// categorydropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox category;
+        protected global::System.Web.UI.WebControls.DropDownList categorydropdown;
 
         /// <summary>
         /// Dishname control.
@@ -184,6 +184,15 @@ namespace MiniProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button clerbtn;
+
+        /// <summary>
+        /// Lblmessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lblmessage;
 
         /// <summary>
         /// Hiddenval control.
