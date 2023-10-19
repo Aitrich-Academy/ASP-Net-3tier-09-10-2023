@@ -28,5 +28,7 @@ namespace BLL
         {
             return Price * Quantity;
         }
+
+        public int Order_Id { get; set; }
     }
 }
