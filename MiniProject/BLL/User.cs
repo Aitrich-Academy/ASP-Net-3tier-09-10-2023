@@ -55,5 +55,23 @@ namespace BLL
 
             return dataBase.ExecuteProcedure(list, "Users_Update");
         }
+        public string UpdateUser()
+        {
+            list.Clear();
+            list.Add("UserID", property.Id);
+            list.Add("Name", property.Name);
+            list.Add("Email", property.Email);
+            list.Add("PhoneNumber", property.PhoneNumber);
+            list.Add("District", property.District);
+            list.Add("Pincode", property.Pincode);
+            list.Add("PasswordHash", property.Password);
+            return dataBase.ExecuteProcedure(list, "Users_Update");
+        }
+        public string DeleteUser()
+        {
+            list.Clear();
+            list.Add("UserID", property.Id);
+            return dataBase.ExecuteProcedure(list, "Users_Delete");
+        }
     }
 }

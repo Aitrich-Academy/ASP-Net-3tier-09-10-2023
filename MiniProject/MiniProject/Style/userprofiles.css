@@ -1,0 +1,79 @@
+﻿.Textbox1 {
+    background: rgba(128, 128, 131, 0.80);
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(128, 128, 131, 0.80);
+    border-width: 1px;
+    color: black;
+    margin-bottom: 10px;
+    margin-left: 23px;
+    width: 100px;
+    height: 20px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.DIV {
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: content-box;
+    background: rgba(0, 0, 0, 0.74);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 140px;
+    margin-left: 20px;
+    margin: 20px; /* Add margin to create space around the content */
+    padding: 20px; /* Add padding to separate content from the edges */
+    border: 1px solid #ddd; /* Add a border to create a border around the content */
+    margin-bottom: inherit;
+    padding: 15px;
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    top: 68%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    border-color: rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.Submit {
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Cascadia Code';
+    line-height: normal;
+    margin-left: 70px;
+}
+
+.Clear {
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Cascadia Code';
+    border-radius: 10px;
+    background: rgba(255, 133, 27, 0.78);
+    margin-left: 16px;
+}
+
+.Button3 {
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Cascadia Code';
+    border-radius: 10px;
+    background: rgba(255, 133, 27, 0.78);
+    margin-left: 118px;
+}
+
+::placeholder {
+    font-size: 20px;
+    color: black;
+}
+
+.Gridview1 {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 3px;
+}
