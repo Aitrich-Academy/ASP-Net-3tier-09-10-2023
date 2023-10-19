@@ -4,53 +4,99 @@ USE Project
 
 ------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------Users Table---------------------------------------------------
-CREATE TABLE Users (
-    UserID INT IDENTITY(1,1) PRIMARY KEY,
+CREATE TABLE Users
+( UserID INT IDENTITY(1, 1) PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,
     Email VARCHAR(500) UNIQUE,
     PhoneNumber BIGINT,
     District VARCHAR(100) NOT NULL,
     Pincode BIGINT NOT NULL,
     PasswordHash NVARCHAR(25) NOT NULL,
-	Status varchar(100)
+    Status VARCHAR(100)
 );
+
 select *from Users
 
 ----------------------------------------------------------------
 ----------------------------------------------------Users_Insert
-CREATE PROCEDURE Users_Insert
-(
-    @Name as VARCHAR(100),
-    @Email as VARCHAR(500),
-    @PhoneNumber as BIGINT,
-    @District as VARCHAR(100),
-    @Pincode as BIGINT,
-    @PasswordHash as VARCHAR(25) 
-)
-as
-begin
-	BEGIN TRANSACTION
-	declare @result as varchar(50)
-	begin
-	insert into Users (Name, Email ,PhoneNumber, District, Pincode, PasswordHash, Status) values (@Name, @Email, @PhoneNumber, @District, @Pincode, @PasswordHash, 'A')
-	if(@@error > 0)
-		begin
-			set @result = 'Error'
-			ROLLBACK TRANSACTION
-		end
-	else
-		begin
-		    set @result = 'Success'
-		end
-	end
-	COMMIT TRANSACTION
-	select @result
-end
-GO
+--CREATE PROCEDURE Users_Insert
+--(
+--    @Name as VARCHAR(100),
+--    @Email as VARCHAR(500),
+--    @PhoneNumber as BIGINT,
+--    @District as VARCHAR(100),
+--    @Pincode as BIGINT,
+--    @PasswordHash as VARCHAR(25) 
+--)
+--as
+--begin
+--	BEGIN TRANSACTION
+--	declare @result as varchar(50)
+--	begin
+--	insert into Users (Name, Email ,PhoneNumber, District, Pincode, PasswordHash, Status) values (@Name, @Email, @PhoneNumber, @District, @Pincode, @PasswordHash, 'A')
+--	if(@@error > 0)
+--		begin
+--			set @result = 'Error'
+--			ROLLBACK TRANSACTION
+--		end
+--	else
+--		begin
+--		    set @result = 'Success'
+--		end
+--	end
+--	COMMIT TRANSACTION
+--	select @result
+--end
+--GO
 
+
+--CREATE PROCEDURE GetUserIdByEmail
+--    @Email NVARCHAR(255)
+--AS
+--BEGIN
+--    SELECT UserID
+--    FROM Users
+--    WHERE Email = @Email
+--END
+
+ALTER PROCEDURE Users_Update
+(  
+    @UserID INT,
+    @Name VARCHAR(100),
+    @Email VARCHAR(500),
+    @PhoneNumber BIGINT,
+    @District VARCHAR(100),
+    @Pincode BIGINT,
+    @PasswordHash NVARCHAR(25)
+)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+    DECLARE @result VARCHAR(50);
+
+    BEGIN
+        UPDATE Users
+        SET Name = @Name, Email = @Email, PhoneNumber = @PhoneNumber, District = @District, Pincode = @Pincode, PasswordHash = @PasswordHash
+        WHERE UserID = @UserID;
+
+        IF (@@ERROR > 0)
+        BEGIN
+            SET @result = 'Error';
+            ROLLBACK TRANSACTION;
+        END
+        ELSE
+        BEGIN
+            SET @result = 'Success';
+        END;
+    END;
+
+    COMMIT TRANSACTION;
+    SELECT @result;
+END;
+GO
 ----------------------------------------------------------------
 ----------------------------------------------------Users_Update
-CREATE PROCEDURE Users_Update  
+alter PROCEDURE Users_Update  
 (  
     @UserID as int,  
     @Name as VARCHAR(100),
@@ -105,8 +151,7 @@ begin
 	 select @result
 end
 GO
-
-----------------------------------------------------------------
+----------------------------------------
 ------------------------------------------------------Login_User
 CREATE PROCEDURE Login_User
 (
@@ -409,3 +454,5 @@ BEGIN
     INNER JOIN Dishes D ON O.Dish_id = D.DishID;
 END
 GO
+select * from Users;
+
