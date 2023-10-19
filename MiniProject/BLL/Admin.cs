@@ -112,5 +112,29 @@ namespace BLL
             }
             return lists;
         }
+
+        public List<Property> SelectOrder()
+        {
+            DataTable dt = new DataTable();
+            dt = dataBase.GetDataTable("OrderDetails");
+            List<Property> list = new List<Property>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                list.Add(new Property
+                {
+                    Order_Id = Convert.ToInt32(dr["OrderID"]),
+                    Name = dr["User_Name"].ToString(),
+                    Email = dr["Email"].ToString(),
+                    PhoneNumber = dr["PhoneNumber"].ToString(),
+                    District = dr["District"].ToString(),
+                    Pincode = dr["Pincode"].ToString(),
+                    Dish_Name = dr["DishName"].ToString(),
+                    Price = Convert.ToDecimal(dr["Price"]),
+                    Quantity = Convert.ToInt32(dr["Quantity"]),
+                    Image = dr["Image"].ToString()
+                });
+            }
+            return list;
+        }
     }
 }

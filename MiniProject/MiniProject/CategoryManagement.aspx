@@ -24,22 +24,32 @@
             <br />
             <br />
             <br />
-            <asp:GridView ID="GridView2" runat="server" DataKeyNames="Category_Id" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView2" runat="server" DataKeyNames="Category_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="black" BorderStyle="Double" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Width="350px">
+                <AlternatingRowStyle BackColor="#B6B6B4" />
                 <Columns>
                     <asp:BoundField DataField="Category_Name" HeaderText="Category_Name" />
                     <asp:BoundField DataField="Category_Id" HeaderText="Category_Id" />
                 </Columns>
+                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <HeaderStyle BackColor="#5E597F" Font-Bold="True" ForeColor="White" Height="50px" HorizontalAlign="Center" Font-Size="20px" />
+                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EEEEEE" ForeColor="Black" Font-Size="18px"/>
+                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
            
                 <div class="dishlabel">
-                    <asp:Label ID="Label6" runat="server" Text="Category Id" CssClass="text" Font-Bold="True"></asp:Label>
+                    <asp:Label ID="Label6" runat="server" Text="Category" CssClass="text" Font-Bold="True"></asp:Label>
                     <asp:Label ID="dishlbl" runat="server" Text="Dish Name" Font-Bold="True"  CssClass="dishnme" ></asp:Label>     
                     <asp:Label ID="Label2" runat="server"  Text="Price" CssClass="pricelbl" Font-Bold="True"></asp:Label>
                     <asp:Label ID="Label3" runat="server" Text="Image" CssClass="fileimage" Font-Bold="True" ></asp:Label>
                 </div>
                 <%--<asp:TextBox ID="category" runat="server" CssClass="textbox1"></asp:TextBox>--%>
         <asp:DropDownList ID="categorydropdown" runat="server" CssClass="textbox1">
-            <asp:ListItem Value="0">------select category Id-----</asp:ListItem>
+            <asp:ListItem Value="0">------Select Category-----</asp:ListItem>
                     <asp:ListItem Value="101">veg</asp:ListItem>
                     <asp:ListItem Value="102">non-veg</asp:ListItem>
                     <asp:ListItem Value="103">Drinks</asp:ListItem>
@@ -59,8 +69,8 @@
             <div class="grid3">
                 <br />
                 <br />
-                <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" Height="215px" Width="772px" CellPadding="4" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="black" BorderStyle="Double" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Height="215px" Width="772px" >
+                    <AlternatingRowStyle BackColor="#B6B6B4" />
                     <Columns>
                         <asp:BoundField DataField="Category_Id" HeaderText="Category_Id" />
                         <asp:BoundField DataField="Dish_Name" HeaderText="Dish_Name" />
@@ -82,16 +92,15 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <EditRowStyle BackColor="#999999" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                    <HeaderStyle BackColor="#5E597F" Font-Bold="True" ForeColor="White" Height="50px" HorizontalAlign="Center" Font-Size="20px" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" Font-Size="18px"/>
+                    <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#000065" />
                 </asp:GridView>
             </div>
 </asp:Content>
