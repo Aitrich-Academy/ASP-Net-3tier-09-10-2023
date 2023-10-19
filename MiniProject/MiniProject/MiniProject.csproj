@@ -266,6 +266,8 @@
     <Content Include="obj\Debug\MiniProject.csproj.CopyComplete" />
     <Content Include="obj\Debug\MiniProject.csproj.CoreCompileInputs.cache" />
     <Content Include="CategoryManagement.aspx" />
+    <Content Include="Style\userprofiles.css" />
+    <Content Include="userprofile.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -468,6 +470,13 @@
     </Compile>
     <Compile Include="CategoryManagement.aspx.designer.cs">
       <DependentUpon>CategoryManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userprofile.aspx.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userprofile.aspx.designer.cs">
+      <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

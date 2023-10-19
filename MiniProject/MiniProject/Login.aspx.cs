@@ -43,6 +43,7 @@ namespace MiniProject
                     Session["PhoneNumber"] = row["PhoneNumber"].ToString();
                     Session["District"] = row["District"].ToString();
                     Session["Pincode"] = row["Pincode"].ToString();
+                    Session["PasswordHash"] = row["PasswordHash"].ToString();
                 }
                 Response.Redirect("UserWebForm.aspx");
             }
