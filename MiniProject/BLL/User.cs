@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BLL
 {
+
     public class User
     {
         private DataBase dataBase = new DataBase();
@@ -55,7 +57,7 @@ namespace BLL
 
             return dataBase.ExecuteProcedure(list, "Users_Update");
         }
-        public string UpdateUser()
+        public string UserUpdate()
         {
             list.Clear();
             list.Add("UserID", property.Id);
@@ -65,13 +67,44 @@ namespace BLL
             list.Add("District", property.District);
             list.Add("Pincode", property.Pincode);
             list.Add("PasswordHash", property.Password);
+
             return dataBase.ExecuteProcedure(list, "Users_Update");
         }
-        public string DeleteUser()
+        public string UserDelete()
         {
             list.Clear();
             list.Add("UserID", property.Id);
+
             return dataBase.ExecuteProcedure(list, "Users_Delete");
         }
+
+
+        public List<Property> SelectAllDishes()
+        {
+    List<Property> list = new List<Property>();
+
+    // Assuming you have a stored procedure to retrieve dish data named "Dish_Select"
+    DataTable dt = dataBase.GetDataTable("Dish_Select");
+
+    foreach (DataRow dr in dt.Rows)
+    {
+        list.Add(new Property
+        {
+            Dish_Id = Convert.ToInt32(dr["DishID"]),
+            Dishe_Name = dr["Dishe_Name"].ToString(),
+            Price = Convert.ToDecimal(dr["Price"]),
+            Image = "Photo/" + dr["Image"].ToString(), // Update the path to match your image folder
+            Category_Id = Convert.ToInt32(dr["Category_id"])
+        });
     }
+    return list;
 }
+        }
+    
+    }
+
+
+       
+
+
+

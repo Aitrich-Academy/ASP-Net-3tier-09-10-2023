@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace MiniProject
 {
-    public partial class UserMaster : System.Web.UI.MasterPage
+    public partial class contactme : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
 
         }

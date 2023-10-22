@@ -14,8 +14,8 @@
     <form id="form1" runat="server">
         <div>
             <asp:Image ID="Logo" runat="server" src="Image/Logo.png" CssClass="logo" />
-            <asp:ImageButton ID="ImageButton1" runat="server" src="Image/Search.png" CssClass="imgBtn" />
-            <asp:TextBox ID="TextBox1" runat="server" Placeholder="   Search...." CssClass="textBox"></asp:TextBox>
+            <asp:ImageButton ID="ImageButton1" runat="server" src="Image/Search.png" CssClass="imgBtn"/>
+            <asp:TextBox ID="TextBox1" runat="server" Placeholder="   Search...." CssClass="textBox" NavigateUrl="~/userprofile.aspx"></asp:TextBox>
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" ForeColor="White" RenderingMode="Table" CssClass="menu">
                 <Items>
                     <asp:MenuItem Text="MENU" Value="MENU"></asp:MenuItem>
@@ -26,6 +26,7 @@
              <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="logout" ForeColor="White" LoginText="LogOut" Font-Underline="False" />
             <asp:ImageButton ID="ImageButton2" runat="server" src="Image/UserHome.png" CssClass="home" PostBackUrl="~/UserWebForm.aspx"/>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
             </asp:ContentPlaceHolder>
         </div>
     </form>

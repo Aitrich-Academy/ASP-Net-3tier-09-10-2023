@@ -10,5 +10,5 @@
         <asp:Button ID="btnMenu" runat="server" Text="Menu" CssClass="buttonMenu" PostBackUrl="~/MenuHomePage.aspx" />
         <asp:Button ID="btnOrderNow" runat="server" Text="Order Now" CssClass="buttonOrderNow" />
     </div>
-    
+    <%--  --%>
 </asp:Content>

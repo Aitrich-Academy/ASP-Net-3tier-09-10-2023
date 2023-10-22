@@ -80,7 +80,7 @@ namespace MiniProject
                 admin.property.Image = ("~/Picture/" + filename + ".jpg");
                 //admin.property.Category_Id = int.Parse(category.Text.Trim());
                 admin.property.Category_Id = int.Parse(categorydropdown.SelectedValue);
-                admin.property.Dish_Name = Dishname.Text.Trim().ToString();
+                admin.property.Dishe_Name = Dishname.Text.Trim().ToString();
                 admin.property.Price = decimal.Parse(price.Text.Trim());
                 string result = admin.Dish_Insert();
                 //category.Text = "";
@@ -117,7 +117,7 @@ namespace MiniProject
                 admin.property.Dish_Id = int.Parse(Hiddenval.Value);
                 //admin.property.Category_Id = int.Parse(category.Text.Trim());
                 admin.property.Category_Id = int.Parse(categorydropdown.SelectedValue);
-                admin.property.Dish_Name = Dishname.Text.Trim().ToString();
+                admin.property.Dishe_Name = Dishname.Text.Trim().ToString();
                 admin.property.Price = decimal.Parse(price.Text.Trim());
                 string result = admin.Dish_Update();
                 categorydropdown.SelectedIndex = 0;
@@ -173,7 +173,7 @@ namespace MiniProject
             admin.EditDishes();
             categorydropdown.SelectedValue=admin.property.Category_Id.ToString();
             //category.Text = admin.property.Category_Id.ToString();
-            Dishname.Text = admin.property.Dish_Name;
+            Dishname.Text = admin.property.Dishe_Name;
             map1.ImageUrl = admin.property.Image;
             map1.AlternateText = admin.property.Image;
             price.Text = admin.property.Price.ToString();
