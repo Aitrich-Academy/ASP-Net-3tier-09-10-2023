@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="customermanage.aspx.cs" Inherits="MiniProject.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="CustomerManagement.aspx.cs" Inherits="MiniProject.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="Style/Customermgment.css" rel="stylesheet" />
+    <link href="Style/CustomerManagement.css" rel="stylesheet" />
     <div class="rectangle">
            
             <asp:Label ID="Label1" runat="server" Text="Customer Management" CssClass="label"></asp:Label>

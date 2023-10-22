@@ -62,13 +62,6 @@
     cursor: pointer;
 }
 
-.LogOut {
-    text-align: left;
-    font-size: 20px;
-    margin-left: 12px;
-    font-weight: bold;
-}
-
 .adminLogo {
     float: right;
     width: 160px;

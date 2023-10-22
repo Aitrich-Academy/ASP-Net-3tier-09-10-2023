@@ -81,30 +81,23 @@ namespace BLL
 
         public List<Property> SelectAllDishes()
         {
-    List<Property> list = new List<Property>();
+            List<Property> list = new List<Property>();
 
-    // Assuming you have a stored procedure to retrieve dish data named "Dish_Select"
-    DataTable dt = dataBase.GetDataTable("Dish_Select");
+            // Assuming you have a stored procedure to retrieve dish data named "Dish_Select"
+            DataTable dt = dataBase.GetDataTable("Dish_Select");
 
-    foreach (DataRow dr in dt.Rows)
-    {
-        list.Add(new Property
-        {
-            Dish_Id = Convert.ToInt32(dr["DishID"]),
-            Dishe_Name = dr["Dishe_Name"].ToString(),
-            Price = Convert.ToDecimal(dr["Price"]),
-            Image = "Photo/" + dr["Image"].ToString(), // Update the path to match your image folder
-            Category_Id = Convert.ToInt32(dr["Category_id"])
-        });
-    }
-    return list;
-}
+            foreach (DataRow dr in dt.Rows)
+            {
+                list.Add(new Property
+                {
+                    Dish_Id = Convert.ToInt32(dr["DishID"]),
+                    Dishe_Name = dr["Dishe_Name"].ToString(),
+                    Price = Convert.ToDecimal(dr["Price"]),
+                    Image = "Photo/" + dr["Image"].ToString(), // Update the path to match your image folder
+                    Category_Id = Convert.ToInt32(dr["Category_id"])
+                });
+            }
+            return list;
         }
-    
-    }
-
-
-       
-
-
-
+    }   
+}

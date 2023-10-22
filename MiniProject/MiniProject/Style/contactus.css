@@ -1,96 +1,71 @@
 ﻿body {
     background-color: black;
+    position: relative;
+}
+
+.logo-1 {
+    display: block;
+    margin-top: 180px;
+    margin-left: 520px;
+    width: 256px;
+    height: 102px;
+}
+
+.contactus {
     color: white;
-}
-
-h1 {
-    color: blue;
-}
-
-p {
-    color: white;
-}
-
-.container {
-    display: table-footer-group;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 100vh;
-}
-
-.Label4 {
-    margin-left: 91px;
-    font-size: 20px;
-    color: #FFF;
-    text-align: center;
-    font-family: Josefin Slab;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-}
-
-.Label5 {
-    margin-top: 7px;
-    margin-left: initial;
-    font-size: 20px;
-    flex-shrink: 0;
-    color: #FFF;
-    text-align: center;
-}
-
-.Label6 {
-    margin-bottom: 800px;
-    font-size: 20px;
-    color: #FFF;
-    text-align: center;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 52px;
-}
-
-.img {
-    width: 200px;
-    height: 170px;
-    margin-left: 200px;
-    margin-right: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.Button1 {
-    margin-left: 400px;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.Label9 {
-    margin-bottom: 100px;
-    margin-left: 32px;
-    font-family: Josefin Slab;
+    font-family: 'Lucida Calligraphy';
     font-size: 30px;
 }
 
-.Label7 {
-    margin-top: 7px;
+.details1 {
+    color: white;
+    float: left;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    margin-left: 100px;
+    position: relative;
+}
+
+.content {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    position: relative;
+    margin-left: 150px;
+    width: 490px;
+    height: 200px;
+}
+
+.openinghours {
+    color: white;
+    font-family: 'Lucida Calligraphy';
+    font-size: 30px;
+}
+
+.details2 {
+    color: white;
+    float: left;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    margin-left: 150px;
+    position: relative;
+}
+
+.back {
+    background: rgba(255, 133, 27, 0.60);
+    border-color: rgba(255, 133, 27, 0.60);
+    border-radius: 10px;
+    color: white;
+    float: left;
+    font: 'Inter', sans-serif;
+    position: relative;
+    width: 100px;
+    height: 52px;
     margin-left: 200px;
-    font-family: 'Brush Script Std';
     font-size: 25px;
-}
-
-.Label8 {
-    font-family: 'Brush Script Std';
-    font-size: 25px;
-}
-
-.auto-style6 {
-    width: 178px;
-    height: 139px;
-    margin-left: 105px;
-    margin-right: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
+    cursor: pointer;
 }
