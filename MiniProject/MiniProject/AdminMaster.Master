@@ -30,7 +30,7 @@
                 <br />
                 <div class="style2">
                     <asp:Image ID="customers" runat="server" src="Image/Customers.png" CssClass="icon"/>
-                    <asp:Button ID="btnCustomers" runat="server" CssClass="button" Text="Customers" />
+                    <asp:Button ID="btnCustomers" runat="server" CssClass="button" Text="Customers" PostBackUrl="~/CustomerManagement.aspx" />
                 </div>
                 <br />
                 <div class="style2">

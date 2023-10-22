@@ -12,57 +12,40 @@ namespace MiniProject
     public partial class WebForm3 : System.Web.UI.Page
     {
         Admin admin = new Admin();
-        List<Property> lists = new List<Property>(); 
-
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
-                OrderBind();
+                UserBind();
             }
         }
 
-        public void OrderBind()
+        public void UserBind()
         {
             GridView1.DataSource = admin.Selectuser();
             GridView1.DataBind();
         }
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void btnBlockuser_Click(object sender, EventArgs e)
         {
+            Button btnBlockuser = (Button)sender;
+            int userId = Convert.ToInt32(btnBlockuser.CommandArgument);
 
-        }
-      
-
-        protected void btnAcceptOrder_Click(object sender, EventArgs e)
-        {
-            
-
-            
-            string result = admin.UserDelete();
+            string result = admin.UserDelete(userId);
 
             if (result == "Success")
             {
-             
-                OrderBind();
+                LblMsg.ForeColor = System.Drawing.Color.Green;
+                LblMsg.Text = "User Blocked....";
+                LblMsg.Visible = true;
             }
             else
             {
-            
+                LblMsg.ForeColor = System.Drawing.Color.Red;
+                LblMsg.Visible = true;
+                LblMsg.Text = "Error: " + result;
             }
-        }
-    
-
-        public string UserDelete()
-        {
-            lists.Clear();
-            lists.Add(new Property { Id = 1 });
-            
-            return admin.UserDelete();   
-        }
-
-        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
         }
     }
 }

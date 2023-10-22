@@ -1,0 +1,15 @@
+﻿.detailsView {
+    float: left;
+    margin-left: 600px;
+}
+
+.btnCancel {
+    color: white;
+    font: bold;
+    font-size: 18px;
+    border-color: Red;
+    background: Red;
+    height: 45px;
+    width: 100px;
+    margin-left: 60px;
+}

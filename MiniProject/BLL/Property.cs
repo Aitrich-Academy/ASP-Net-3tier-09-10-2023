@@ -15,13 +15,14 @@ namespace BLL
         public string District { get; set; }
         public string Pincode { get; set; }
         public string Password { get; set; }
+        public string Status { get; set; }
 
         public int Category_Id { get; set; }
-        public string Category_Name { get; set;}
+        public string Category_Name { get; set; }
 
         public int Dish_Id { get; set; }
         public string Dishe_Name { get; set; }
-        public string Image { get; set; }        
+        public string Image { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public decimal TotalAmount()
@@ -30,6 +31,5 @@ namespace BLL
         }
 
         public int Order_Id { get; set; }
-        
     }
 }

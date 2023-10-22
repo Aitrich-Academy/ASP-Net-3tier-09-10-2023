@@ -116,7 +116,7 @@ namespace BLL
         public List<Property> SelectOrder()
         {
             DataTable dt = new DataTable();
-            dt = dataBase.GetDataTable("OrderDetails");
+            dt = dataBase.GetDataTable("Admin_OrderDetails");
             List<Property> list = new List<Property>();
             foreach (DataRow dr in dt.Rows)
             {
@@ -136,10 +136,11 @@ namespace BLL
             }
             return list;
         }
+
         public List<Property> Selectuser()
         {
             DataTable dt = new DataTable();
-            dt = dataBase.GetDataTable("User_Select");
+            dt = dataBase.GetDataTable("User_Select_AdminView");
             List<Property> list = new List<Property>();
             foreach (DataRow dr in dt.Rows)
             {
@@ -152,18 +153,18 @@ namespace BLL
                     District = dr["District"].ToString(),
                     Pincode = dr["Pincode"].ToString(),
                     Password = dr["PasswordHash"].ToString(),
-                    
+                    Status = dr["Status"].ToString()
                 });
             }
             return list;
         }
-        public string UserDelete()
+
+        public string UserDelete(int userId)
         {
             lists.Clear();
-            lists.Add("UserID", property.Id);
+            lists.Add("UserID", userId);
 
-            return dataBase.ExecuteProcedure(lists, "Users_Delete");
+            return dataBase.ExecuteProcedure(lists, "Users_Delete_Admin");
         }
-
     }
 }
