@@ -26,13 +26,14 @@
             <asp:TextBox ID="TextBox1" runat="server" Placeholder="   Search...." CssClass="textBox" NavigateUrl="~/userprofile.aspx"></asp:TextBox>
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" ForeColor="White" RenderingMode="Table" CssClass="menu">
                 <Items>
-                    <asp:MenuItem Text="MENU" Value="MENU"></asp:MenuItem>
-                    <asp:MenuItem Text="PROFILE" Value="PROFILE" NavigateUrl="~/UserProfile.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="CATEGORIES" Value="CATEGORIES" NavigateUrl="~/MenuHomePage.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="ACCOUNT" Value="ACCOUNT" NavigateUrl="~/UserProfile.aspx"></asp:MenuItem>
                  </Items>
                     <StaticMenuItemStyle HorizontalPadding="20px" />
              </asp:Menu>
              <asp:Button ID="btnLogOut" runat="server" Text="LogoOut" CssClass="logout" PostBackUrl="~/Login.aspx" />
-            <asp:ImageButton ID="ImageButton2" runat="server" src="Image/UserHome.png" CssClass="home" PostBackUrl="~/UserWebForm.aspx"/>
+            <asp:ImageButton ID="ImageButton3" runat="server" src="Image/Order_View.png" CssClass="icon" PostBackUrl="~/OrderView.aspx"/>
+            <asp:ImageButton ID="ImageButton2" runat="server" src="Image/UserHome.png" CssClass="icon" PostBackUrl="~/UserWebForm.aspx"/>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 
             </asp:ContentPlaceHolder>

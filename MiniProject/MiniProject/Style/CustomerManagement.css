@@ -16,21 +16,23 @@
 }
 
 .GridView1 {
-    width: 600px;
-    height: 173px;
-    display: inline-grid;
-    margin: 100px;
-    margin-left: 300px;
-    margin-top: 400px;
-    margin-bottom: 2000px;
-    top: 2000%;
-    left: 800%;
-    transform: translate(-50%, -50%);
+    width: 1000px;
+    margin-top: 120px;
+    margin-left: 50px;
 }
 
-.LogOut {
-    text-align: left;
-    font-size: 20px;
-    margin-left: 12px;
-    font-weight: bold;
+.btnBlock {
+    font-size: 18px;
+    border-color: Red;
+    background: Red;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 45px;
+    width: 150px;
+}
+
+.label2 {
+    float: right;
+    font-size: 18px;
+    margin-top: 180px;
 }

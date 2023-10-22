@@ -82,8 +82,6 @@ namespace BLL
         public List<Property> SelectAllDishes()
         {
             List<Property> list = new List<Property>();
-
-            // Assuming you have a stored procedure to retrieve dish data named "Dish_Select"
             DataTable dt = dataBase.GetDataTable("Dish_Select");
 
             foreach (DataRow dr in dt.Rows)
@@ -93,11 +91,43 @@ namespace BLL
                     Dish_Id = Convert.ToInt32(dr["DishID"]),
                     Dishe_Name = dr["Dishe_Name"].ToString(),
                     Price = Convert.ToDecimal(dr["Price"]),
-                    Image = "Photo/" + dr["Image"].ToString(), // Update the path to match your image folder
+                    Image = "Photo/" + dr["Image"].ToString(),
                     Category_Id = Convert.ToInt32(dr["Category_id"])
                 });
             }
             return list;
+        }
+
+        public List<Property> GetUserOrderDetails(string email, string passwordHash)
+        {
+            DataTable dt = dataBase.GetDataTable("User_DisplayOrderDetails", new SqlParameter("@Email", email), new SqlParameter("@PasswordHash", passwordHash));
+
+            List<Property> list = new List<Property>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                list.Add(new Property
+                {
+                    Order_Id = Convert.ToInt32(dr["OrderID"]),
+                    Name = dr["User_Name"].ToString(),
+                    Email = dr["Email"].ToString(),
+                    PhoneNumber = dr["PhoneNumber"].ToString(),
+                    District = dr["District"].ToString(),
+                    Pincode = dr["Pincode"].ToString(),
+                    Dishe_Name = dr["DishName"].ToString(),
+                    Price = Convert.ToDecimal(dr["Price"]),
+                    Quantity = Convert.ToInt32(dr["Quantity"]),
+                    Image = dr["Image"].ToString()
+                });
+            }
+            return list;
+        }
+
+        public string Order_Cancel()
+        {
+            list.Clear();
+            list.Add("OrderID", property.Order_Id);
+
+            return dataBase.ExecuteProcedure(list, "Order_Delete");
         }
     }   
 }
