@@ -20,7 +20,7 @@ namespace BLL
         public string Category_Name { get; set;}
 
         public int Dish_Id { get; set; }
-        public string Dish_Name { get; set; }
+        public string Dishe_Name { get; set; }
         public string Image { get; set; }        
         public decimal Price { get; set; }
         public int Quantity { get; set; }
@@ -30,5 +30,6 @@ namespace BLL
         }
 
         public int Order_Id { get; set; }
+        
     }
 }

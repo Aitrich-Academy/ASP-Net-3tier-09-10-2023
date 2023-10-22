@@ -13,43 +13,41 @@ namespace MiniProject
         User user = new User();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserID"] != null)
             {
-                HiddenId.Value = Session["UserID"].ToString();
+                SetUserDetails();
+                if (Session["UserID"] != null)
+                {
+                    Hidden.Value = Session["UserID"].ToString();
+                }
             }
-            SetUserDetails();
         }
         private void SetUserDetails()
         {
-            TxtName.Text = Session["Name"].ToString();
-            TxtEmail.Text = Session["Email"].ToString();
-            TxtPhonenumber.Text = Session["PhoneNumber"].ToString();
-            TxtDistrict.Text = Session["District"].ToString();
-            TxtPincode.Text = Session["Pincode"].ToString();
-           TxtPassword.Text = Session["PasswordHash"].ToString();
+            txtName.Text = Session["Name"].ToString();
+            txtEmail.Text = Session["Email"].ToString();
+            txtPhoneNumber.Text = Session["PhoneNumber"].ToString();
+            txtDistrict.Text = Session["District"].ToString();
+            txtPincode.Text = Session["Pincode"].ToString();
+            txtPswd.Text = Session["PasswordHash"].ToString();
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
-                UpdateUser();
-
+            Update();
         }
-        private void UpdateUser()
+        public void Update()
         {
             user.property.Id = Convert.ToInt32(Session["UserID"]);
-            user.property.Name = TxtName.Text.ToString();
-            user.property.Email = TxtEmail.Text.ToString();
-            user.property.PhoneNumber = TxtPhonenumber.Text.ToString();
-            user.property.District = TxtDistrict.Text.ToString();
-            user.property.Pincode = TxtPincode.Text.ToString();
-            user.property.Password = TxtPassword.Text.ToString();
+            user.property.Name = txtName.Text.ToString();
+            user.property.Email = txtEmail.Text.ToString();
+            user.property.PhoneNumber = txtPhoneNumber.Text.ToString();
+            user.property.District = txtDistrict.Text.ToString();
+            user.property.Pincode = txtPincode.Text.ToString();
+            user.property.Password = txtPswd.Text.ToString();
 
-            string result = user.UpdateUser();
-
+            string result = user.UserUpdate();
             if (result == "Success")
             {
-                // If the update was successful, update the session variables
                 Session["Name"] = user.property.Name;
                 Session["Email"] = user.property.Email;
                 Session["PhoneNumber"] = user.property.PhoneNumber;
@@ -57,58 +55,46 @@ namespace MiniProject
                 Session["Pincode"] = user.property.Pincode;
                 Session["PasswordHash"] = user.property.Password;
 
-                Response.Write("<script>alert('Booking successfully......👍😎'); window.location.href = 'UserWebForm.aspx'; </script>");
+                Response.Write("<script>alert('Profile Updated'); window.location.href = 'UserProfile.aspx'; </script>");
             }
             else
             {
-
-                Response.Write("<script language='javascript'>alert('Error: Booking failed');</script>");
+                Response.Write("<script language='javascript'>alert('Error: Update failed'); window.location.href = 'UserProfile.aspx'; </script>");
             }
         }
 
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
         }
         private void Clear()
         {
-            TxtName.Text = string.Empty;
-            TxtEmail.Text = string.Empty;
-            TxtPhonenumber.Text = string.Empty;
-            TxtDistrict.Text = string.Empty;
-            TxtPincode.Text = string.Empty;
-            TxtPassword.Text = string.Empty;
+            txtName.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtPhoneNumber.Text = string.Empty;
+            txtDistrict.Text = string.Empty;
+            txtPincode.Text = string.Empty;
+            txtPswd.Text = string.Empty;
         }
-
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void btnDelete_Click(object sender, EventArgs e)
         {
-
-                DeleteUser();
- 
+            Delete();
         }
-
-        private void DeleteUser()
+        public void Delete()
         {
             user.property.Id = Convert.ToInt32(Session["UserID"]);
-            string result = user.DeleteUser();
+
+            string result = user.UserDelete();
             if (result == "Success")
             {
-                Session["Name"] = user.property.Name;
-                Session["Email"] = user.property.Email;
-                Session["PhoneNumber"] = user.property.PhoneNumber;
-                Session["District"] = user.property.District;
-                Session["Pincode"] = user.property.Pincode;
-                Session["PasswordHash"] = user.property.Password;
-
-                Response.Write("<script>alert('Delete successfully......👍😎'); window.location.href = 'UserWebForm.aspx'; </script>");
-
-
+                Response.Write("<script>alert('Account Deleted'); window.location.href = 'Register.aspx'; </script>");
             }
             else
             {
-                Response.Write("<script language='javascript'>alert('Error: Booking failed');</script>");
+                Response.Write("<script language='javascript'>alert('Error: Update failed'); window.location.href = 'UserProfile.aspx'; </script>");
             }
         }
+
     }
 }
