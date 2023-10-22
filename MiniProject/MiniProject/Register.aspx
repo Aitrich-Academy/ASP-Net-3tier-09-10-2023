@@ -57,8 +57,11 @@
                 <%--<asp:CompareValidator ID="confirmPswdValidator" runat="server" ControlToCompare="txtPswd" Text="Passwords do not match" Display="Dynamic" Operator="Equal" CssClass="RegularExpressionValidator" ControlToValidate="txtConfirmPswd"></asp:CompareValidator>--%>
                 <br /><br /><br />
                 <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" CssClass="bn54" OnClick="btnSignUp_Click" />            
-                <div class="login" >
-                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" ForeColor="White" PostBackUrl="~/Login.aspx" >Already have an account?</asp:LinkButton>
+                <div class="label">
+                    <asp:Label ID="Label2" runat="server" Text="Already Registered?" ForeColor="White" ></asp:Label>
+                </div>
+                <div class="register" >
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" ForeColor="DodgerBlue" PostBackUrl="~/Login.aspx" >Login here....</asp:LinkButton>
                 </div>
             </div>
             <asp:HiddenField ID="Hidden" runat="server" Value="-1" />

@@ -29,14 +29,24 @@
     width: 350px;
 }
 
-.login {
+.label {
+    float: left;
     text-align: left;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 20px;
     margin-left: 130px;
-    font-family: Lucida Calligraphy;
-    position: relative;
-    width: 215px;
+    width: 150px;
+    font-family: 'Times New Roman';
+}
+
+.register {
+    float: left;
+    text-align: left;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 100px;
+    font-family: 'Times New Roman';
 }
 
 .TextBox {

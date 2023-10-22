@@ -69,11 +69,11 @@
             <div class="grid3">
                 <br />
                 <br />
-                <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="black" BorderStyle="Double" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Height="215px" Width="772px" >
+                <asp:GridView ID="GridView3" runat="server" DataKeyNames="Dish_Id,Category_Id" AutoGenerateColumns="False" BackColor="White" BorderColor="Black" BorderStyle="Double" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Height="215px" Width="772px" >
                     <AlternatingRowStyle BackColor="#B6B6B4" />
                     <Columns>
                         <asp:BoundField DataField="Category_Id" HeaderText="Category_Id" />
-                        <asp:BoundField DataField="Dish_Name" HeaderText="Dish_Name" />
+                        <asp:BoundField DataField="Dishe_Name" HeaderText="Dish_Name" />
                         <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
                             <ControlStyle Height="100px" Width="100px" />
                         </asp:ImageField>

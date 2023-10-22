@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="MiniProject.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="MiniProject.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Style/UserProfile.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="Style/userprofiles.css" rel="stylesheet" />
-     <div>
+        <div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br />
             <div class="rectangle" >
                 <br />
@@ -25,11 +25,5 @@
                 <asp:Button ID="btnDelete" runat="server" Text="Delete Account" CssClass="btnDelete" OnClick="btnDelete_Click" />            
             </div>
             <asp:HiddenField ID="Hidden" runat="server" />
-        </div>
-
-
-      
-    </asp:Content>
-
-
-
+        </div>      
+</asp:Content>

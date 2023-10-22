@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MiniProject
 {
-    public partial class contactus : System.Web.UI.Page
+    public partial class ContactUS : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
