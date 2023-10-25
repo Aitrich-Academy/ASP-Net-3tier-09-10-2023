@@ -21,10 +21,17 @@
                 <br /><br />
 
                 <asp:TextBox ID="txtPswd" runat="server" CssClass="TextBox" Placeholder="   Password...." TextMode="Password" ForeColor="White"></asp:TextBox>
-                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPswd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPswd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="pswdValidator" runat="server" ValidationExpression="^.{8,}$" Text="Password must have at least 8 characters" Display="Dynamic" CssClass="RegularExpressionValidator" ControlToValidate="txtPswd"></asp:RegularExpressionValidator>--%>
                 <br /><br /><br />
 
                 <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="bn54" OnClick="btnLogin_Click" />
+                <div class="label">
+                    <asp:Label ID="Label1" runat="server" Text="New User?" ForeColor="White" ></asp:Label>
+                </div>
+                <div class="register" >
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" ForeColor="DodgerBlue" PostBackUrl="~/Register.aspx" >Register here....</asp:LinkButton>
+                </div>
             </div>
         </div>
     </form>

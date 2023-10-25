@@ -7,6 +7,13 @@
     <title>IndianPlatter</title>
     <link rel="icon" type="image/x-icon" href="Image/Favicon.png"/>
     <link href="Style/AdminMaster.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -23,7 +30,7 @@
                 <br />
                 <div class="style2">
                     <asp:Image ID="customers" runat="server" src="Image/Customers.png" CssClass="icon"/>
-                    <asp:Button ID="btnCustomers" runat="server" CssClass="button" Text="Customers" />
+                    <asp:Button ID="btnCustomers" runat="server" CssClass="button" Text="Customers" PostBackUrl="~/CustomerManagement.aspx" />
                 </div>
                 <br />
                 <div class="style2">
@@ -39,8 +46,7 @@
                 <br />
                 <div class="style2">
                     <asp:Image ID="LogOut" runat="server" CssClass="icon" src="Image/Logout.png" />
-                    <br />
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="Black" LoginText="LogOut" Font-Underline="False" CssClass="LogOut" />
+                    <asp:Button ID="btnLogOut" runat="server" Text="LogOut" CssClass="button" PostBackUrl="~/Login.aspx" />
                 </div>
                 <asp:Image ID="AdminLogo" runat="server" src="Image/Admin.png" CssClass="adminLogo" />
             </div>

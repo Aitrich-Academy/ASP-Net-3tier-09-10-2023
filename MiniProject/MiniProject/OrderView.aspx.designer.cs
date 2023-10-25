@@ -11,34 +11,34 @@ namespace MiniProject
 {
 
 
-    public partial class ContactUS
+    public partial class OrderView
     {
 
         /// <summary>
-        /// form1 control.
+        /// DetailsView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
 
         /// <summary>
-        /// Image1 control.
+        /// Lblmsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Label Lblmsg;
 
         /// <summary>
-        /// btnBack control.
+        /// Hiddenvalue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
+        protected global::System.Web.UI.WebControls.HiddenField Hiddenvalue;
     }
 }

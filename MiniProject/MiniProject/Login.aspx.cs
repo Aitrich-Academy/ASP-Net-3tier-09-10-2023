@@ -13,6 +13,7 @@ namespace MiniProject
     public partial class Login : System.Web.UI.Page
     {
         User user = new User();
+        Admin admin = new Admin();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,12 +39,31 @@ namespace MiniProject
                 if (table.Rows.Count > 0)
                 {
                     DataRow row = table.Rows[0];
+                    Session["UserID"] = row["UserID"].ToString();
                     Session["Name"] = row["Name"].ToString();
                     Session["Email"] = row["Email"].ToString();
                     Session["PhoneNumber"] = row["PhoneNumber"].ToString();
                     Session["District"] = row["District"].ToString();
                     Session["Pincode"] = row["Pincode"].ToString();
                     Session["PasswordHash"] = row["PasswordHash"].ToString();
+
+                    string userStatus = row["Status"].ToString();
+                    if (userStatus == "Delete")
+                    {
+                        Response.Write("<script language='javascript'>alert('Error: Account is deleted'); window.location.href = 'Login.aspx';</script>");
+                        return;
+                    }
+                    else if (userStatus == "ADMIN deleted")
+                    {
+                        int userId = int.Parse(Session["UserID"].ToString());
+                        string ResultAdmin = admin.UserDelete(userId);
+
+                        if (ResultAdmin == "Success")
+                        {
+                            Response.Write("<script language='javascript'>alert('Error: This Account is ADMIN deleted.....'); window.location.href = 'Login.aspx';</script>");
+                            return;
+                        }
+                    }
                 }
                 Response.Redirect("UserWebForm.aspx");
             }

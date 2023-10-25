@@ -6,7 +6,7 @@
         <div class="rectangle">
             <br /><br /><br />
             <asp:Label ID="Label1" runat="server" Text="Order Management" CssClass="label"></asp:Label>
-            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="black" BorderStyle="Double" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" CssClass="gridView" DataKeyNames="Order_Id" >
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Double" BorderWidth="1px" CellPadding="3" GridLines="Vertical" AutoGenerateColumns="False" CssClass="gridView" DataKeyNames="Order_Id" >
                 <AlternatingRowStyle BackColor="#B6B6B4" />
                 <Columns>
                     <asp:BoundField DataField="Order_Id" HeaderText="OrderID" />
@@ -15,7 +15,7 @@
                     <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
                     <asp:BoundField DataField="District" HeaderText="District" />
                     <asp:BoundField DataField="Pincode" HeaderText="Pincode" />
-                    <asp:BoundField DataField="Dish_Name" HeaderText="Dish_Name" />
+                    <asp:BoundField DataField="Dishe_Name" HeaderText="Dish_Name" />
                     <asp:BoundField DataField="Price" HeaderText="Price" />
                     <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                     <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
