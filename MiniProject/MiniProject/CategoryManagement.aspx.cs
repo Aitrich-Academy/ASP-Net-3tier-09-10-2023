@@ -24,29 +24,21 @@ namespace MiniProject
 
         public void InsertCategory()
         {
-            //if (int.TryParse(CategoryId.Text.Trim(), out int categoryId))
-            
-                admin.property.Category_Id = int.Parse(CategoryId.Text);
-                admin.property.Category_Name = DropDownList1.SelectedItem.Text;
-                string result = admin.Category_Insert();
-                if (result == "Success")
-                {
-                lblmsg.ForeColor=System.Drawing.Color.Green;
-                    lblmsg.Text = "Insertion was successful.";
-                    lblmsg.Visible = true;
-                }
-                else
-                {
+            admin.property.Category_Id = int.Parse(CategoryId.Text);
+            admin.property.Category_Name = DropDownList1.SelectedItem.Text;
+            string result = admin.Category_Insert();
+            if (result == "Success")
+            {
+                lblmsg.ForeColor = System.Drawing.Color.Green;
+                lblmsg.Text = "Insertion was successful.";
+                lblmsg.Visible = true;
+            }
+            else
+            {
                 lblmsg.ForeColor = System.Drawing.Color.Red;
                 lblmsg.Visible = true;
                 lblmsg.Text = "Error: " + result;
-                }
-            
-            //else
-            //{
-            //    lblmsg.Visible = true;
-            //    lblmsg.Text = "Error:Already Inserted Category Id";
-            //}
+            }
             GridData();
         }
 
@@ -78,12 +70,10 @@ namespace MiniProject
                 FileUpload1.SaveAs(path + filename + ".jpg");
 
                 admin.property.Image = ("~/Picture/" + filename + ".jpg");
-                //admin.property.Category_Id = int.Parse(category.Text.Trim());
                 admin.property.Category_Id = int.Parse(categorydropdown.SelectedValue);
-                admin.property.Dishe_Name = Dishname.Text.Trim().ToString();
+                admin.property.Dish_Name = Dishname.Text.Trim().ToString();
                 admin.property.Price = decimal.Parse(price.Text.Trim());
                 string result = admin.Dish_Insert();
-                //category.Text = "";
                 CategoryId.Text = "";
                 Dishname.Text = "";
                 price.Text = "";
@@ -92,7 +82,7 @@ namespace MiniProject
                 Hiddenval.Value = "-1";
                 if (result == "SUCCESS")
                 {
-                    Lblmessage.ForeColor=System.Drawing.Color.Green;
+                    Lblmessage.ForeColor = System.Drawing.Color.Green;
                     Lblmessage.Visible = true;
                     Lblmessage.Text = "Inserted Successfully";
                 }
@@ -115,9 +105,8 @@ namespace MiniProject
                 FileUpload1.SaveAs(path + filename + ".jpg");
                 admin.property.Image = ("~/Picture/" + filename + ".jpg");
                 admin.property.Dish_Id = int.Parse(Hiddenval.Value);
-                //admin.property.Category_Id = int.Parse(category.Text.Trim());
                 admin.property.Category_Id = int.Parse(categorydropdown.SelectedValue);
-                admin.property.Dishe_Name = Dishname.Text.Trim().ToString();
+                admin.property.Dish_Name = Dishname.Text.Trim().ToString();
                 admin.property.Price = decimal.Parse(price.Text.Trim());
                 string result = admin.Dish_Update();
                 categorydropdown.SelectedIndex = 0;
@@ -126,8 +115,6 @@ namespace MiniProject
                 price.Text = "";
                 map1.Visible = false;
 
-                //DropDownList1.SelectedIndex = 0;
-                //Hiddenval.Value = "-1";
                 if (result == "Success")
                 {
                     Lblmessage.ForeColor = System.Drawing.Color.Green;
@@ -160,7 +147,7 @@ namespace MiniProject
             {
                 Lblmessage.ForeColor = System.Drawing.Color.Red;
                 Lblmessage.Visible = true;
-               Lblmessage.Text = "Error";
+                Lblmessage.Text = "Error";
             }
             GridSource();
         }
@@ -171,13 +158,11 @@ namespace MiniProject
             map1.Visible = true;
             admin.property.Dish_Id = int.Parse(Hiddenval.Value);
             admin.EditDishes();
-            categorydropdown.SelectedValue=admin.property.Category_Id.ToString();
-            //category.Text = admin.property.Category_Id.ToString();
-            Dishname.Text = admin.property.Dishe_Name;
+            categorydropdown.SelectedValue = admin.property.Category_Id.ToString();
+            Dishname.Text = admin.property.Dish_Name;
             map1.ImageUrl = admin.property.Image;
             map1.AlternateText = admin.property.Image;
             price.Text = admin.property.Price.ToString();
-            //GridSource();
         }
 
         protected void submitbtn_Click(object sender, EventArgs e)
