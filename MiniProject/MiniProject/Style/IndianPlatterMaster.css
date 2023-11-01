@@ -28,23 +28,25 @@
 }
 
 .label1 {
-    color: ghostwhite;
+    color: white;
     text-align: left;
     position: relative;
     width: 1200px;
     height: 95px;
+    font: bold;
     font-size: 70px;
     font-family: 'Lucida Calligraphy';
-    margin-top: 250px;
+    margin-top: 290px;
     margin-left: 40px;
 }
 
 .label2 {
-    color: ghostwhite;
+    color: white;
     text-align: left;
     position: relative;
     width: 1200px;
     height: 60px;
+    font: bold;
     font-size: 50px;
     font-family: 'Times New Roman';
     margin-left: 40px;
@@ -65,13 +67,16 @@
     margin-left: 50px;
     transition: all .4s ease-in-out;
 }
+
     .bn632-hover:hover {
         background-position: 100% 0;
         transition: all .4s ease-in-out;
     }
+
     .bn632-hover:focus {
         outline: none;
     }
+
     .bn632-hover.bn19 {
         background-image: linear-gradient( to right, #f5ce62, #e43603, #fa7199, #e85a19 );
         box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
