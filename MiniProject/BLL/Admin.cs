@@ -27,7 +27,7 @@ namespace BLL
         public string Dish_Insert()
         {
             lists.Clear();
-            lists.Add("Dishe_Name", property.Dishe_Name);
+            lists.Add("Dishe_Name", property.Dish_Name);
             lists.Add("Price", property.Price);
             lists.Add("Image", property.Image);
             lists.Add("Category_Id", property.Category_Id);
@@ -39,7 +39,7 @@ namespace BLL
         {
             lists.Clear();
             lists.Add("Dish_Id", property.Dish_Id);
-            lists.Add("Dishe_Name", property.Dishe_Name);
+            lists.Add("Dishe_Name", property.Dish_Name);
             lists.Add("Price", property.Price);
             lists.Add("Image", property.Image);
             lists.Add("Category_Id", property.Category_Id);
@@ -64,7 +64,7 @@ namespace BLL
             if (dt.Rows.Count > 0)
             {
                 property.Category_Id = Convert.ToInt32(dt.Rows[0].ItemArray[4]);
-                property.Dishe_Name = dt.Rows[0].ItemArray[1].ToString();
+                property.Dish_Name = dt.Rows[0].ItemArray[1].ToString();
                 decimal price;
                 if (decimal.TryParse(dt.Rows[0].ItemArray[2].ToString(), out price))
                 {
@@ -88,7 +88,7 @@ namespace BLL
                 list.Add(new Property
                 {
                     Dish_Id = Convert.ToInt32(dr["DishID"]),
-                    Dishe_Name = dr["Dishe_Name"].ToString(),
+                    Dish_Name = dr["Dishe_Name"].ToString(),
                     Price = Convert.ToDecimal(dr["Price"]),
                     Image = dr["Image"].ToString(),
                     Category_Id = Convert.ToInt32(dr["Category_id"])
@@ -128,10 +128,12 @@ namespace BLL
                     PhoneNumber = dr["PhoneNumber"].ToString(),
                     District = dr["District"].ToString(),
                     Pincode = dr["Pincode"].ToString(),
-                    Dishe_Name = dr["DishName"].ToString(),
+                    Dish_Name = dr["DishName"].ToString(),
                     Price = Convert.ToDecimal(dr["Price"]),
                     Quantity = Convert.ToInt32(dr["Quantity"]),
-                    Image = dr["Image"].ToString()
+                    TotalAmount = Convert.ToDecimal(dr["Total_Price"]),
+                    Image = dr["Image"].ToString(),
+                    Status = dr["Status"].ToString()
                 });
             }
             return list;
