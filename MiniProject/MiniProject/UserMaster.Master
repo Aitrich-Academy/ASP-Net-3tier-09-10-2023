@@ -13,7 +13,11 @@
             window.history.forward();
         }
         setTimeout("preventBack()", 0);
-        window.onunload = function() { null };
+        window.onunload = function () { null };
+
+        function redirectToAnotherWebForm() {
+            window.location.href = 'Search.aspx';
+        }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -23,7 +27,7 @@
         <div>
             <asp:Image ID="Logo" runat="server" src="Image/Logo.png" CssClass="logo" />
             <asp:ImageButton ID="ImageButton1" runat="server" src="Image/Search.png" CssClass="imgBtn"/>
-            <asp:TextBox ID="TextBox1" runat="server" Placeholder="   Search...." CssClass="textBox" NavigateUrl="~/userprofile.aspx"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" Placeholder="   Search...." CssClass="textBox" onclick="redirectToAnotherWebForm()"></asp:TextBox>
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" ForeColor="White" RenderingMode="Table" CssClass="menu">
                 <Items>
                     <asp:MenuItem Text="CATEGORIES" Value="CATEGORIES" NavigateUrl="~/MenuHomePage.aspx"></asp:MenuItem>
