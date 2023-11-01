@@ -14,8 +14,6 @@ namespace DAL
         private SqlConnection GetConnection()
         {
 
-
-
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
