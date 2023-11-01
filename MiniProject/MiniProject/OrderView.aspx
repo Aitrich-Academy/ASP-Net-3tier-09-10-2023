@@ -13,7 +13,7 @@
                 <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
                 <asp:BoundField DataField="District" HeaderText="District" />
                 <asp:BoundField DataField="Pincode" HeaderText="Pincode" />
-                <asp:BoundField DataField="Dishe_Name" HeaderText="Dish_Name" />
+                <asp:BoundField DataField="Dish_Name" HeaderText="Dish_Name" />
                 <asp:BoundField DataField="Price" HeaderText="Price" />
                 <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                 <asp:ImageField DataImageUrlField="Image" HeaderText="Image">

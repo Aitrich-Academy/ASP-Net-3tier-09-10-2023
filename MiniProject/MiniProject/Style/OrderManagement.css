@@ -16,17 +16,16 @@
 }
 
 .gridView {
-    margin-top: 110px;
-    margin-left: 20px;
+    Width: 900px;
+    margin-top: 120px;
+    margin-left: 50px;
 }
 
 .btnOrder {
     border-color: rgba(255, 133, 27, 0.78);
     background: rgba(255, 133, 27, 0.78);
-    height: 45px;
-    width: 150px;
-    font-size: 20px;
-    cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
+    height: 45px;
+    width: 150px;
 }
