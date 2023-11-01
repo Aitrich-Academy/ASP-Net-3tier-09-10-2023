@@ -31,6 +31,28 @@ namespace BLL
             return dataBase.ExecuteProcedure(list, "Users_Insert");
         }
 
+        public string UserUpdate()
+        {
+            list.Clear();
+            list.Add("UserID", property.Id);
+            list.Add("Name", property.Name);
+            list.Add("Email", property.Email);
+            list.Add("PhoneNumber", property.PhoneNumber);
+            list.Add("District", property.District);
+            list.Add("Pincode", property.Pincode);
+            list.Add("PasswordHash", property.Password);
+
+            return dataBase.ExecuteProcedure(list, "Users_Update");
+        }
+
+        public string UserDelete()
+        {
+            list.Clear();
+            list.Add("UserID", property.Id);
+
+            return dataBase.ExecuteProcedure(list, "Users_Delete");
+        }
+
         public string Login()
         {
             list.Clear();
@@ -54,48 +76,13 @@ namespace BLL
             list.Add("PhoneNumber", property.PhoneNumber);
             list.Add("District", property.District);
             list.Add("Pincode", property.Pincode);
+            list.Add("Dish_Name", property.Dish_Name);
+            list.Add("Price", property.Price);
+            list.Add("Quantity", property.Quantity);
+            list.Add("TotalPrice", property.TotalAmount);
+            list.Add("Image", property.Image);
 
-            return dataBase.ExecuteProcedure(list, "Users_Update");
-        }
-        public string UserUpdate()
-        {
-            list.Clear();
-            list.Add("UserID", property.Id);
-            list.Add("Name", property.Name);
-            list.Add("Email", property.Email);
-            list.Add("PhoneNumber", property.PhoneNumber);
-            list.Add("District", property.District);
-            list.Add("Pincode", property.Pincode);
-            list.Add("PasswordHash", property.Password);
-
-            return dataBase.ExecuteProcedure(list, "Users_Update");
-        }
-        public string UserDelete()
-        {
-            list.Clear();
-            list.Add("UserID", property.Id);
-
-            return dataBase.ExecuteProcedure(list, "Users_Delete");
-        }
-
-
-        public List<Property> SelectAllDishes()
-        {
-            List<Property> list = new List<Property>();
-            DataTable dt = dataBase.GetDataTable("Dish_Select");
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                list.Add(new Property
-                {
-                    Dish_Id = Convert.ToInt32(dr["DishID"]),
-                    Dishe_Name = dr["Dishe_Name"].ToString(),
-                    Price = Convert.ToDecimal(dr["Price"]),
-                    Image = "Photo/" + dr["Image"].ToString(),
-                    Category_Id = Convert.ToInt32(dr["Category_id"])
-                });
-            }
-            return list;
+            return dataBase.ExecuteProcedure(list, "Order_Management");
         }
 
         public List<Property> GetUserOrderDetails(string email, string passwordHash)
@@ -113,9 +100,10 @@ namespace BLL
                     PhoneNumber = dr["PhoneNumber"].ToString(),
                     District = dr["District"].ToString(),
                     Pincode = dr["Pincode"].ToString(),
-                    Dishe_Name = dr["DishName"].ToString(),
+                    Dish_Name = dr["DishName"].ToString(),
                     Price = Convert.ToDecimal(dr["Price"]),
                     Quantity = Convert.ToInt32(dr["Quantity"]),
+                    TotalAmount = Convert.ToDecimal(dr["Total_Price"]),
                     Image = dr["Image"].ToString()
                 });
             }
@@ -128,6 +116,58 @@ namespace BLL
             list.Add("OrderID", property.Order_Id);
 
             return dataBase.ExecuteProcedure(list, "Order_Delete");
+        }
+
+        public List<Property> SearchDishes(string searchQuery)
+        {
+            DataTable dt = dataBase.GetDataTable("Dishessearch");
+            List<Property> list = new List<Property>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                int dishId = Convert.ToInt32(dr["DishID"]);
+                string dishName = dr["Dishe_Name"].ToString();
+                decimal price = Convert.ToDecimal(dr["Price"]);
+                string image = dr["Image"].ToString();
+                int categoryId = Convert.ToInt32(dr["Category_id"]);
+
+                if (string.IsNullOrEmpty(searchQuery) || DishMatches(searchQuery, dishName, categoryId))
+                {
+                    list.Add(new Property
+                    {
+                        Dish_Id = dishId,
+                        Dish_Name = dishName,
+                        Price = price,
+                        Image = image,
+                        Category_Id = categoryId
+                    });
+                }
+            }
+            return list;
+        }
+
+        private bool DishMatches(string searchQuery, string dishName, int categoryId)
+        {
+            if (searchQuery == "all")
+            {
+                return true;
+            }
+            else if (searchQuery == "veg" && categoryId == 101)
+            {
+                return true;
+            }
+            else if (searchQuery == "nonveg" && categoryId == 102)
+            {
+                return true;
+            }
+            else if (searchQuery == "drinks" && categoryId == 103)
+            {
+                return true;
+            }
+            else
+            {
+                return dishName.ToLower().Contains(searchQuery.ToLower());
+            }
         }
     }   
 }

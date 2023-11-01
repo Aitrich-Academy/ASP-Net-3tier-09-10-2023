@@ -43,6 +43,14 @@
     margin-left: 428px;
 }
 
+.img {
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-top: 95px;
+    margin-right: 440px;
+}
+
 .details {
     float: left;
     background: rgba(0, 0, 0, 0.74);
@@ -66,6 +74,12 @@
     margin-right: 10px;
 }
 
+.result {
+    font-size: 20px;
+    color: dodgerblue;
+    font: bold;
+}
+
 .totalPrice {
     float: left;
     background: rgba(0, 0, 0, 0.74);
@@ -73,7 +87,7 @@
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.22);
     border-width: 1px;
-    width: 160px;
+    width: 170px;
     height: 65px;
     position: relative;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -94,7 +108,7 @@
     cursor: pointer;
     position: relative;
     margin-top: 80px;
-    margin-left: 560px;
+    margin-left: 570px;
 }
 
     .btnCancel:hover {
@@ -118,6 +132,7 @@
     margin-top: 80px;
     margin-left: 10px;
 }
+
     .btnConfirm:hover {
         color: white;
         background-color: green;

@@ -17,12 +17,12 @@
                 <br /><br />
 
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="TextBox" Placeholder="   Email...." TextMode="Email" ForeColor="White"></asp:TextBox>
-                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br /><br />
 
                 <asp:TextBox ID="txtPswd" runat="server" CssClass="TextBox" Placeholder="   Password...." TextMode="Password" ForeColor="White"></asp:TextBox>
-                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPswd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="pswdValidator" runat="server" ValidationExpression="^.{8,}$" Text="Password must have at least 8 characters" Display="Dynamic" CssClass="RegularExpressionValidator" ControlToValidate="txtPswd"></asp:RegularExpressionValidator>--%>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPswd" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="pswdValidator" runat="server" ValidationExpression="^.{8,}$" Text="Password must have at least 8 characters" Display="Dynamic" CssClass="RegularExpressionValidator" ControlToValidate="txtPswd"></asp:RegularExpressionValidator>
                 <br /><br /><br />
 
                 <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="bn54" OnClick="btnLogin_Click" />
