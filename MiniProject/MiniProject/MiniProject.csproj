@@ -270,6 +270,7 @@
     <Content Include="CategoryManagement.aspx" />
     <Content Include="Style\CategoryManagement.css" />
     <Content Include="Style\ContactUS.css" />
+    <Content Include="Style\MenuList.css" />
     <Content Include="Style\OrderView.css" />
     <Content Include="Style\UserProfile.css" />
     <Content Include="UserProfile.aspx" />
