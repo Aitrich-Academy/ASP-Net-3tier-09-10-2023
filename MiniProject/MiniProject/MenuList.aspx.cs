@@ -16,42 +16,47 @@ namespace MiniProject
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack == true)
-            {
-                SelectAllDishes();
-               
-            }
-        }
-        public void SelectAllDishes()
-        {
-
-
-            List<Property> dishes = user.SelectAllDishes();
-
-            // Bind the data to the DataList
-            DataList1.DataSource = dishes;
-            DataList1.DataBind();
-        }
-
-              protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void DataList1_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
         }
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            
-        }
+            int itemIndex = Convert.ToInt32(e.CommandArgument);
+            Label quantityLabel = (Label)e.Item.FindControl("quantitylabl");
 
-        protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
-        {
-           
+            if (e.CommandName == "Increment")
+            {
+                int currentQuantity = 0;
+                if (!string.IsNullOrEmpty(quantityLabel.Text))
+                {
+                    currentQuantity = Convert.ToInt32(quantityLabel.Text);
                 }
+                currentQuantity++;
+                quantityLabel.Text = currentQuantity.ToString();
+            }
+            else if (e.CommandName == "Decrement")
+            {
+                int currentQuantity = 0;
+                if (!string.IsNullOrEmpty(quantityLabel.Text))
+                {
+                    currentQuantity = Convert.ToInt32(quantityLabel.Text);
+                }
+                currentQuantity--;
+                quantityLabel.Text = currentQuantity.ToString();
+            }
+            else if (e.CommandName == "BuyNow")
+            {
+                string dishName = ((Label)e.Item.FindControl("lb1")).Text;
+                string imageUrl = ((Image)e.Item.FindControl("imgDish")).ImageUrl;
+                decimal price = Convert.ToDecimal(((Label)e.Item.FindControl("lbl2")).Text);
+                int quantity = Convert.ToInt32(((Label)e.Item.FindControl("quantitylabl")).Text);
+
+                Session["Dishe_Name"] = dishName;
+                Session["Image"] = imageUrl;
+                Session["Price"] = price;
+                Session["Quantity"] = quantity;
+                Response.Redirect("Booking.aspx");
             }
         }
+    }
+}
    
