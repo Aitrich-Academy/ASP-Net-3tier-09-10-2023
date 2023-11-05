@@ -31,6 +31,7 @@ namespace BLL
             lists.Add("Price", property.Price);
             lists.Add("Image", property.Image);
             lists.Add("Category_Id", property.Category_Id);
+            lists.Add("Meals", property.Meals);
 
             return dataBase.ExecuteProcedure(lists, "Dish_Insert");
         }
@@ -43,6 +44,7 @@ namespace BLL
             lists.Add("Price", property.Price);
             lists.Add("Image", property.Image);
             lists.Add("Category_Id", property.Category_Id);
+            lists.Add("Meals", property.Meals);
 
             return dataBase.ExecuteProcedure(lists, "Dish_Update");
         }
@@ -74,6 +76,7 @@ namespace BLL
                 {
 
                 }
+                property.Meals = dt.Rows[0].ItemArray[6].ToString();
                 property.Image = dt.Rows[0].ItemArray[3].ToString();
             }
         }
@@ -91,7 +94,8 @@ namespace BLL
                     Dish_Name = dr["Dishe_Name"].ToString(),
                     Price = Convert.ToDecimal(dr["Price"]),
                     Image = dr["Image"].ToString(),
-                    Category_Id = Convert.ToInt32(dr["Category_id"])
+                    Category_Id = Convert.ToInt32(dr["Category_id"]),
+                    Meals = dr["Meals"].ToString()
                 });
             }
             return list;

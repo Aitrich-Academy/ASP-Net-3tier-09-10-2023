@@ -42,6 +42,7 @@
                 <asp:Label ID="Label6" runat="server" Text="Category" CssClass="categoryTxt" Font-Bold="True"></asp:Label>
                 <asp:Label ID="dishlbl" runat="server" Text="Dish Name" CssClass="dishName" Font-Bold="True" ></asp:Label>     
                 <asp:Label ID="Label2" runat="server"  Text="Price" CssClass="price" Font-Bold="True"></asp:Label>
+                <asp:Label ID="Label7" runat="server" Text="Meals" CssClass="meals" Font-Bold="True"></asp:Label>
             </div>
 
             <div>
@@ -53,6 +54,7 @@
             </asp:DropDownList>
             <asp:TextBox ID="Dishname" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             <asp:TextBox ID="price" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
+            <asp:TextBox ID="meals" runat="server" CssClass="textbox2" ForeColor="White"></asp:TextBox>
             </div>
             <br />
             <div>
@@ -82,6 +84,7 @@
                         <ControlStyle Font-Names="Footlight MT Light" />
                         <HeaderStyle Font-Bold="True" />
                         </asp:BoundField>
+                        <asp:BoundField DataField="Meals" HeaderText="Meals" />
                         <asp:TemplateField HeaderText="EDIT">
                             <ItemTemplate>
                                 <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" ImageUrl="~/Image/Edit.png" OnClick="ImageButton1_Click" Height="45px" Width="42px" />

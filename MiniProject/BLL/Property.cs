@@ -24,6 +24,7 @@ namespace BLL
         public string Dish_Name { get; set; }
         public string Image { get; set; }
         public decimal Price { get; set; }
+        public string Meals { get; set; }
         public int Quantity { get; set; }
         public decimal TotalAmount { get; set; }
 

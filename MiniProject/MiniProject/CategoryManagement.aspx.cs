@@ -73,10 +73,12 @@ namespace MiniProject
                 admin.property.Category_Id = int.Parse(categorydropdown.SelectedValue);
                 admin.property.Dish_Name = Dishname.Text.Trim().ToString();
                 admin.property.Price = decimal.Parse(price.Text.Trim());
+                admin.property.Meals = meals.Text.Trim().ToString();
                 string result = admin.Dish_Insert();
                 CategoryId.Text = "";
                 Dishname.Text = "";
                 price.Text = "";
+                meals.Text = "";
                 categorydropdown.SelectedIndex = 0;
                 DropDownList1.SelectedIndex = 0;
                 Hiddenval.Value = "-1";
@@ -108,11 +110,13 @@ namespace MiniProject
                 admin.property.Category_Id = int.Parse(categorydropdown.SelectedValue);
                 admin.property.Dish_Name = Dishname.Text.Trim().ToString();
                 admin.property.Price = decimal.Parse(price.Text.Trim());
+                admin.property.Meals = meals.Text.Trim().ToString();
                 string result = admin.Dish_Update();
                 categorydropdown.SelectedIndex = 0;
                 CategoryId.Text = "";
                 Dishname.Text = "";
                 price.Text = "";
+                meals.Text = "";
                 map1.Visible = false;
 
                 if (result == "Success")
@@ -163,6 +167,7 @@ namespace MiniProject
             map1.ImageUrl = admin.property.Image;
             map1.AlternateText = admin.property.Image;
             price.Text = admin.property.Price.ToString();
+            meals.Text = admin.property.Meals.ToString();
         }
 
         protected void submitbtn_Click(object sender, EventArgs e)

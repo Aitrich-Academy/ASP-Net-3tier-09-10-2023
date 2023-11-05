@@ -215,6 +215,11 @@
     <Content Include="Login.aspx" />
     <Content Include="MenuHomePage.aspx" />
     <Content Include="MenuList.aspx" />
+    <Content Include="MenuListBrakfast.aspx" />
+    <Content Include="MenuListDinner.aspx" />
+    <Content Include="MenuListDrinks.aspx" />
+    <Content Include="MenuListLunch.aspx" />
+    <Content Include="MenuListStarter.aspx" />
     <Content Include="obj\Debug\MiniProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\MiniProject.dll" />
     <Content Include="obj\Debug\MiniProject.pdb" />
@@ -419,6 +424,41 @@
     </Compile>
     <Compile Include="MenuList.aspx.designer.cs">
       <DependentUpon>MenuList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuListBrakfast.aspx.cs">
+      <DependentUpon>MenuListBrakfast.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuListBrakfast.aspx.designer.cs">
+      <DependentUpon>MenuListBrakfast.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuListDinner.aspx.cs">
+      <DependentUpon>MenuListDinner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuListDinner.aspx.designer.cs">
+      <DependentUpon>MenuListDinner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuListDrinks.aspx.cs">
+      <DependentUpon>MenuListDrinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuListDrinks.aspx.designer.cs">
+      <DependentUpon>MenuListDrinks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuListLunch.aspx.cs">
+      <DependentUpon>MenuListLunch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuListLunch.aspx.designer.cs">
+      <DependentUpon>MenuListLunch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuListStarter.aspx.cs">
+      <DependentUpon>MenuListStarter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuListStarter.aspx.designer.cs">
+      <DependentUpon>MenuListStarter.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="OrderManagement.aspx.cs">
