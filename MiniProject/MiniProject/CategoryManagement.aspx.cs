@@ -181,6 +181,14 @@ namespace MiniProject
                 UpdateDish();
             }
         }
+        protected void clerbtn_Click(object sender, EventArgs e)
+        {
+            categorydropdown.SelectedIndex = 0;
+            Dishname.Text = "";
+            price.Text = "";
+            meals.Text = "";
+            map1.Visible = false;
+        }
 
         public void GridData()
         {

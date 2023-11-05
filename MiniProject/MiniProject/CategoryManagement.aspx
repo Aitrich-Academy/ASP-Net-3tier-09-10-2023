@@ -64,8 +64,8 @@
             <asp:ImageMap ID="map1" runat="server" CssClass="mapPIC" ></asp:ImageMap>
             <br /><br /><br />
             <div>
-                <asp:Button ID="submitbtn" runat="server" Text="Submit" CssClass="btnSubmit" OnClick="submitbtn_Click" ForeColor="White" />
-                <asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="btnClear" ForeColor="White"/>
+                <asp:Button ID="submitbtn" runat="server" Text="Submit" CssClass="btnSubmit" ForeColor="White" OnClick="submitbtn_Click" />
+                <asp:Button ID="clerbtn" runat="server" Text="Clear" CssClass="btnClear" ForeColor="White" OnClick="clerbtn_Click"/>
                 <asp:Label ID="Lblmessage" runat="server"  CssClass="Lblmessage"></asp:Label>
             </div>
             <asp:HiddenField ID="Hiddenval" runat="server" Value="-1" />
