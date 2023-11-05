@@ -53,6 +53,11 @@ namespace BLL
             return dataBase.ExecuteProcedure(list, "Users_Delete");
         }
 
+        public DataTable GetUserStatus(string email, string passwordHash)
+        {
+            return dataBase.GetDataTable("Register_User", new SqlParameter("@Email", email), new SqlParameter("@PasswordHash", passwordHash));
+        }
+
         public string Login()
         {
             list.Clear();

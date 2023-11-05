@@ -50,19 +50,13 @@ namespace MiniProject
                     string userStatus = row["Status"].ToString();
                     if (userStatus == "Delete")
                     {
-                        Response.Write("<script language='javascript'>alert('Error: Account is deleted'); window.location.href = 'Login.aspx';</script>");
+                        Response.Write("<script language='javascript'>alert('Error: Account is deleted'); window.location.href = 'Register.aspx';</script>");
                         return;
                     }
                     else if (userStatus == "ADMIN deleted")
                     {
-                        int userId = int.Parse(Session["UserID"].ToString());
-                        string ResultAdmin = admin.UserDelete(userId);
-
-                        if (ResultAdmin == "Success")
-                        {
-                            Response.Write("<script language='javascript'>alert('Error: This Account is ADMIN deleted.....'); window.location.href = 'Login.aspx';</script>");
-                            return;
-                        }
+                        Response.Write("<script language='javascript'>alert('Error: This Account is ADMIN deleted.....❌'); window.location.href = 'Register.aspx';</script>");
+                        return;
                     }
                 }
                 Response.Redirect("UserWebForm.aspx");
