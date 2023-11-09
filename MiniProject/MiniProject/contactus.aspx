@@ -17,7 +17,7 @@
                 <div class="contactus">
                     Contact Us
                 </div>
-                <br />Location <br />+0123456789<br />IndianPlatter@gmail.com
+                <br />Location <br />+0123456789<br />haiindianplatter@gmail.com
             </div>
             <div class="content">
                 Necessary, making this the first true generator <br/>on the Internet. It uses a dictionary of over 200 <br/>Latin words, combined with
