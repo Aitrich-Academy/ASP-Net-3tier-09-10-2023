@@ -22,6 +22,6 @@ IndianPlatter is an online food ordering platform built using ASP.Net Three-tier
 ## Installation
 1. Clone the repository " https://github.com/Aitrich-Academy/ASP-Net-3tier-09-10-2023.git ".
 2. Set up the database using the SQL scripts provided in the `database` folder.
-3. Open the project in Visual Studio.
+3. Open the project in Visual Studio 2022 Community.
 4. Configure connection strings in the `web.config` file.
 5. Run the application.
