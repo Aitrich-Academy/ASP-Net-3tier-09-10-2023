@@ -16,7 +16,7 @@ IndianPlatter is an online food ordering platform built using ASP.Net Three-tier
 - **Manage Profile:** Users can update their profile information.
 
 ## Technologies Used
-- ASP.Net
+- ASP.Net Three-tier
 - MS SQL Server
 
 ## Installation
