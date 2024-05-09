@@ -13,7 +13,8 @@ namespace DAL
     {
         private SqlConnection GetConnection()
         {
-
+            //Set up the database connection and change 'Data Source'
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-F0HK91ND;Initial Catalog=Project;Integrated Security=True");
 
             if (con.State == ConnectionState.Open)
             {
